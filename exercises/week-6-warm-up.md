@@ -40,7 +40,7 @@ In order to ski, the skier needs poles and skis of appropriate length, which are
 
 Calculation rules: 
 
-- The pole length is 85% of the skier's height. Poles are sold only in five-centimeter increments, so the calculated length must be rounded to the nearest five centimeters. Implement the rounding in a separate method called `roundToNearestFive(int value)`.
+- The pole length is 85% of the skier's height. Poles are sold only in five-centimeter increments, so the calculated length must be rounded to the nearest five centimeters. Implement the rounding in a separate method called `roundToNearestFive(double value)`.
 - The ski length is the pole length plus 40cm.
 
 Example:
@@ -48,7 +48,10 @@ Example:
 ```
 Enter skier's height: 183
 Pole length: 155cm
-Ski length: 199cm
+Ski length: 195cm
 ```
 
 ⭐ Optional extension: Create a new class called `Rounding` and move the five-centimeter rounding method into this class. Modify the original code to use the new class.
+
+> [!IMPORTANT]
+> Once you have completed these warm-up exercises, check the model solutions in Moodle's "Schedule" page.

@@ -44,14 +44,14 @@ You are an adult
 
 ## Warm-up exercise 3
 
-Ask the user for minutes in range 0-59 and hours in range 1-24. If the time is valid, print it in format "The times is HH:MM", otherwise print "That time is invalid". You can assume that the user inputs numeric values.
+Ask the user for minutes in range 0-59 and hours in range 1-24. If the time is valid, print it in format "The times is H:M", otherwise print "That time is invalid". You can assume that the user inputs numeric values.
 
 Examples:
 
-```text
-Enter hours (1-24): 12
-Enter minutes (0-59): 29
-The time is 12:29
+```textd
+Enter hours (1-24): 8
+Enter minutes (0-59): 5
+The time is 8:5
 ```
 
 ```text

@@ -43,13 +43,14 @@ Even integers:
 > 
 > ```java
 > while (true) {
+>   System.out.print("Enter value: ");
 >   String value = input.nextLine();
 >   if (/* Condition to stop reading the input */) {
 >     // End the while loop 
 >     break;
->   } else {
->      // Do something with the input
 >   }
+>
+>   // Do something with the input
 > }
 >
 > System.out.println("Done!");
@@ -69,3 +70,6 @@ Enter word:
 Search word: milk
 The word milk is on the list
 ```
+
+> [!IMPORTANT]
+> Once you have completed these warm-up exercises, check the model solutions in Moodle's "Schedule" page.
