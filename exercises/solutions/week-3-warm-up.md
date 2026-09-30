@@ -8,34 +8,19 @@ package week3;
 public class WarmUp1 {
     public static void main(String[] args) {
         for (int number = 3; number <= 15; number += 2) {
-            printNumber(number, number == 15);
+            System.out.print(number + " ");
         }
         System.out.println();
 
-        int number = 6;
-        for (int index = 0; index < 7; index++) {
-            printNumber(number, index == 6);
-            number += index + 2;
+        for (int number = 6; number <= 24; number += 3) {
+            System.out.print(number + " ");
         }
         System.out.println();
 
-        number = 10;
-        for (int index = 0; index < 7; index++) {
-            printNumber(number, index == 6);
-            if (index % 2 == 0) {
-                number += 1;
-            } else {
-                number += index / 2 + 2;
-            }
+        for (int number = 12; number >= 0; number -= 2) {
+            System.out.print(number + " ");
         }
         System.out.println();
-    }
-
-    private static void printNumber(int number, boolean last) {
-        System.out.print(number);
-        if (!last) {
-            System.out.print(" ");
-        }
     }
 }
 ```
@@ -46,22 +31,20 @@ public class WarmUp1 {
 package week3;
 
 public class WarmUp2 {
-    public static void main(String[] args) {
-        for (int digit = 9; digit >= 0; digit--) {
-            int repetitions = 10 - digit;
-            for (int count = 0; count < repetitions; count++) {
-                System.out.print(digit);
-            }
-        }
-        System.out.println();
+    int rows = 5;
+    int columns = 5;
 
-        for (int digit = 9; digit >= 0; digit--) {
-            int repetitions = digit % 2 == 1 ? 2 : 1;
-            for (int count = 0; count < repetitions; count++) {
-                System.out.print(digit);
+    public static void main(String[] args) {
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                if (row == rows - 1 || column == 0 || column == columns - 1) {
+                    System.out.print("#");
+                } else {
+                    System.out.print("-");
+                }
             }
+            System.out.println();
         }
-        System.out.println();
     }
 }
 ```
@@ -140,15 +123,15 @@ public class WarmUp5 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter invoice number: ");
-        int invoiceNumber = Integer.parseInt(input.nextLine());
-        int remainingDigits = invoiceNumber;
+        String invoiceNumber = input.nextLine();
+        String[] digits = invoiceNumber.split("");
         int weight = 7;
         int sum = 0;
+        int checkDigit = 0;
 
-        while (remainingDigits > 0) {
-            int digit = remainingDigits % 10;
-            sum += digit * weight;
-            remainingDigits /= 10;
+        for (int index = digits.length - 1; index >= 0; index--) {
+            int currentDigit = Integer.parseInt(digits[index]);
+            sum += currentDigit * weight;
 
             if (weight == 7) {
                 weight = 3;
@@ -159,8 +142,8 @@ public class WarmUp5 {
             }
         }
 
-        int checkDigit = (10 - sum % 10) % 10;
-        System.out.println("Reference number: " + invoiceNumber + checkDigit);
+        checkDigit = (10 - sum % 10) % 10;
+        System.out.println("Reference number is " + invoiceNumber + checkDigit);
     }
 }
 ```

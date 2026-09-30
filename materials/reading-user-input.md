@@ -3,7 +3,7 @@
 ## The behavior of user input
 
 - We use the built-in `Scanner` class to read user input from the console
-- The class provides the `nextLine` method, which blocks the code execution until users writes something to the console and presses the `Enter` key
+- The class provides the `nextLine` method, which blocks the code execution until users writes something to the console and presses the <kbd>enter</kbd> key
 - The text written by the user is returned by the `nextLine` method as a string and commonly stored to a variable
 
 ```java
@@ -27,7 +27,7 @@ public class HelloProgram {
 
 - When executing the previous example program, we see the printed message _"Enter your name:"_ in the console
 - The execution is blocked to the line `String name = input.nextLine();`. This is because the program is waiting for the user input
-- To continue the execution, we must write something to the console and press the `Enter` key. Providing the input will continue the program's execution and the `System.out.println("Hello " + name);` line is executed
+- To continue the execution, we must write something to the console and press the <kbd>enter</kbd> key. Providing the input will continue the program's execution and the `System.out.println("Hello " + name);` line is executed
 
 ```text
 Enter your name: Kalle
@@ -91,9 +91,9 @@ at UserInputExample.main(UserInputExample.java:8)
 
 - In this case, the `parseInt` method throws an `NumberFormatException`, causing the program to crash. This can be handled with a `try` and `catch` statements which we will cover later
 
-## User input example
+## User input example: BMI calculation
 
-- Here is an example of a program, which calculates the body max index (BMI) based on the user's input
+> _"Write a program that asks the user for their height (meters) and weight (kilograms). Based on this information, the program calculates their body mass index (BMI) and prints it. BMI is calculated by dividing the weight by the square of the height. Display the BMI in two decimal accurary."_
 
 ```java
 // Import built-in Scanner and DecimalFormat

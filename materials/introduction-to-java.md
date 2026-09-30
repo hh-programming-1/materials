@@ -1,5 +1,21 @@
 # Introduction to Java programming
 
+## Welcome to the Programming 1 course! 👋
+
+- During this course, we will deepen our programming skills with the **Java** programming language
+- During the weekly sessions we will familirialize ourselves with new topics and work on hands-on programming exercises
+- The course assessment is is based on **the weekly exercise and final exam points**, both making up 50% of the final grade
+  - On top of the attendance requirements, passing grade requires 50% of exericse points and 40% of exam points
+- Weekly exercises have a deadline before the next week's session
+  - Submissions made after the deadline will lower the exercise points
+
+## Rules and guidelines
+
+- Using GenAI tools (e.g. ChatGPT or Copilot) is advisable to improve your learning, **but using them to directly generate exercise solutions is strictly forbidden and considered plagiarism**
+  - These tools aren't available during the final exam and achieving good grades aren't plausible without a lot of hands-on practice
+- Copying exercise solutions from other students in also strictly forbidden and considered plagiarism
+  - Automated plagiarism checks are performed on the weekly exercises to spot plagiarism
+
 ## Programming languages
 
 - A programming language is a way for humans to give instructions to a computer. It allows us to implement anything from simple automations to complex applications
@@ -61,7 +77,7 @@ public class HelloProgram {
 
 ## Anatomy of a Java program
 
-- Java code is written in `.java` files, e.g. `HelloProgram.java`, which contains a class with the same 
+- Java code is written in `.java` files, e.g. `HelloProgram.java`, which contains a class with the same
 - The `main` method is the entry point of the program, its contents will be executed while executing the program
 - Statements are executed in order within the `main` method
 - Curly braces `{}` define blocks of code
@@ -204,7 +220,7 @@ System.out.println(message);
 
 - `System.out.println()` prints a value **with a line break**
 - `System.out.print()` prints a value **without a line break**
-- In addition, the newline character `\n` can be used to add a line break 
+- In addition, the newline character `\n` can be used to add a line break
 - `println` and `print` are called **methods**, which are similar to functions. Java has many built-in classes with useful methods, but we can also define methods of our own
 - We can print e.g. text, numbers, and variables
 
@@ -317,7 +333,7 @@ public class HelloProgram {
         double result = 10 / 3; // 3.3333
 
         System.out.println("salary is " + oneDecimal.format(salary)); // "Salary is 4000.6"
-        System.out.println("10 / 3 = " + twoDecimals.format(result)); // "10 / 3 ≈ 3.33"
+        System.out.println("10 / 3 ≈ " + twoDecimals.format(result)); // "10 / 3 ≈ 3.33"
     }
 }
 ```

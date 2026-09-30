@@ -33,7 +33,7 @@ The number is positive
 
 ## Warm-up exercise 2
 
-Ask the user for their age. If they are 18 or older, print that they are an adult. Otherwise, print that they are a minor.
+Ask the user for their age. If the age is less than 0 or greater than 120, print that their age is invalid. If they their age is less than 18 print that they are a minor. Otherwise, print that they are an adult.
 
 Example:
 
@@ -44,7 +44,7 @@ You are an adult
 
 ## Warm-up exercise 3
 
-Ask the user for minutes in range 0-59 and hours in range 1-24. If the time is valid, print it in format "The times is H:M", otherwise print "That time is invalid". You can assume that the user inputs numeric values.
+Ask the user for hours in range 1-24 and minutes in range 0-59. If the time is valid (in the provided range), print it in format "The times is H:M", otherwise print "That time is invalid". You can assume that the user inputs numeric values.
 
 Examples:
 

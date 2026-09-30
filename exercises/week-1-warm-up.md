@@ -37,6 +37,9 @@ Add a `WarmUp2.java` file in the `week1` folder with a `WarmUp2` class and a `ma
 
 Implement a program that prints the numbers from 1 to 10, each on a new line.
 
+> [!IMPORTANT]
+> Proper formatting is essential for the readability of the code. Use the <kbd>shift</kbd> + <kbd>alt</kbd> + <kbd>f</kbd> keyboard shortcut in VS Code to automatically format your code.
+
 > [!TIP]
 > Use a [for loop](https://www.w3schools.com/Java/java_for_loop.asp) to iterate through the integers and the System.out.println method to display each number.
 

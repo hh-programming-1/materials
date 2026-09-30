@@ -12,29 +12,39 @@ src/
 ```
 
 > [!IMPORTANT]
-> **Warm-up exercises are not submitted or evaluated in Viope**. The purpose of these exercises is to practice the topics with the help of the model solutions. 
-
+> **Warm-up exercises are not submitted or evaluated in Viope**. The purpose of these exercises is to practice the topics with the help of the model solutions.
 
 ## Warm-up exercise 1
 
-Create an application that produces the following output (create and test one output at a time!):
+Using loops, create an application that prints the following:
 
 ```text
 3 5 7 9 11 13 15
-6 8 11 15 20 26 33
-10 11 13 14 17 18 22
+6 9 12 15 18 21 24
+12 10 8 6 4 2 0
 ```
 
 Don't hardcode your solution; instead, find the rule for printing the numbers in a loop.
 
+> [!TIP]
+> Consider printing each row of numbers using an separate loop.
+
 ## Warm-up exercise 2
 
-Create an application that prints:
+Using loops, create an application that prints the following:
 
-```text
-9887776666555554444443333333222222221111111110000000000
-998776554332110
 ```
+#---#
+#---#
+#---#
+#---#
+#####
+```
+
+Don't hardcode your solution; instead, find the rule for printing the symbols in a loop.
+
+> [!TIP]
+> Having outer loop going through the rows and inner loop going through the columns might be useful.
 
 ## Warm-up exercise 3
 
@@ -87,13 +97,33 @@ Enter triangle height: 4
 
 ## Warm-up exercise 5
 
-When paying bills, a reference number is used. The reference number is based on the invoice number, to which the check digit for the reference number is added at the end. Create an application that asks the user for the invoice number (int) and prints the reference number generated from it.
+When paying bills, a reference number is used. The reference number is based on the invoice number, to which the check digit for the reference number is added at the end. Create an application that asks the user for the invoice number and prints the reference number generated from it.
 
 Rules for forming the reference number:
 
 - Multiply the digits of the invoice number from right to left by the weights 7, 3, 1, 7, 3, 1, ...
-- Add the resulting numbers together
-- Subtract the total from the next full ten. If the difference is 10, the check digit is 0
+- Add the resulting numbers together.
+- Subtract the total from the next full ten. If the difference is 10, the check digit is 0.
+
+Use the following code as a starting point for the `main` method:
+
+```java
+Scanner input = new Scanner(System.in);
+System.out.print("Enter invoice number: ");
+String invoiceNumber = input.nextLine();
+// digits is an array containing each invoice number digit, e.g. "123" => {"1", "2", "3"}
+String[] digits = invoiceNumber.split("");
+int weight = 7;
+int sum = 0;
+int checkDigit = 0;
+
+for (/* iterate the digits array from the end index to the beginning index */) {
+    int currentDigit = Integer.parseInt(digits[i]);
+    // Increase the sum
+}
+
+// Calculate the check digit and print the reference number
+```
 
 Example:
 
@@ -105,21 +135,23 @@ Example:
 Solve the problem step by step:
 
 - Read the invoice number from the user.
-- In a loop, print one digit at a time from right to left so that you can handle each digit of the invoice number one by one. Here, it is useful to remove the printed digit from the invoice number before the next loop iteration.
-- Declare the variables outside the loop:
-
-    ```java
-    int weight = 7;
-    int sum = 0;
-    int checkDigit = 0;
-    ```
-
-- While printing the digits one by one from right to left, add the digit multiplied by the weight to the sum
+- In a loop, print one digit at a time from right to left so that you can handle each digit of the invoice number one by one.
+- While printing the digits one by one from right to left, add the digit multiplied by the weight to the sum.
 - In each step, change the value of the weight variable from 7 → 3, 3 → 1, and 1 → 7. The weight changes continuously.
 - When all digits have been processed, only the check digit calculation remains; this is the key part in figuring out how to find the next full ten.
-- Finally, print the invoice number and the check digit to the console
+- Finally, print the invoice number and the check digit to the console.
 
-Additionally, you can test with the invoice number 12345, from which the resulting reference number is 123453.
+Example outputs:
+
+```text
+Enter invoice number: 2020061
+Reference number is 20200615
+```
+
+```text
+Enter invoice number: 12345
+Reference number is 123453
+```
 
 > [!IMPORTANT]
 > Once you have completed these warm-up exercises, check the model solutions in Moodle's "Schedule" page.

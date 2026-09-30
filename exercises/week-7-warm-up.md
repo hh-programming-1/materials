@@ -19,13 +19,13 @@ Finally, create a `WarmUp1.java` file in the `week7` folder. Implement a `main` 
 
 ```java
 // name, team, goals, assists
-Player player = new Player("Aleksander Barkov", "Florida Panthers", 30, 50);
+Player barkov = new Player("Aleksander Barkov", "Florida Panthers", 30, 50);
 
-System.out.println(player.getName());
-System.out.println(player.getTeam());
-System.out.println(player.getGoals());
-System.out.println(player.getAssists());
-System.out.println(player.getPoints());
+System.out.println(barkov.getName());
+System.out.println(barkov.getTeam());
+System.out.println(barkov.getGoals());
+System.out.println(barkov.getAssists());
+System.out.println(barkov.getPoints());
 ```
 
 Check that the following is printed:

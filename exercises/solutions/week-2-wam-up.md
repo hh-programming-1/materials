@@ -37,7 +37,9 @@ public class WarmUp2 {
         System.out.print("Enter your age: ");
         int age = Integer.parseInt(input.nextLine());
 
-        if (age >= 18) {
+        if (age < 0 || age > 120) {
+            System.out.println("Your age is invalid");
+        } if (age >= 18) {
             System.out.println("You are an adult");
         } else {
             System.out.println("You are a minor");
