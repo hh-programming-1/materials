@@ -4,11 +4,26 @@ Materials for the Haage-Helia's Programming 1 course.
 
 ## Materials
 
-1. [Introduction to Java programming](./materials/introduction-to-java.md)
-2. [Reading user input](./materials/reading-user-input.md)
-3. [Setting up the Java development environment](./materials/jdk-vscode.md)
-4. [Getting started with Viope](./materials//viope.md)
+- [Introduction to Java programming](./materials/introduction-to-java.md)
+- [Reading user input](./materials/reading-user-input.md)
+- [Setting up the Java development environment](./materials/jdk-vscode.md)
+- [Getting started with Viope](./materials//viope.md)
+- [Conditional statements](./materials/conditional-statements.md)
 
 ## Exercises
 
-TODO
+- [Java Basics Warm-up Exercises](./exercises/week-1-warm-up.md)
+- [Java Basics Exercises](./exercises/week-1-java-basics.md)
+- [Conditional Statements Warm-up Exercises](./exercises/week-2-wam-up.md)
+- [Conditional Statements Exercises](./exercises/week-2-conditionals.md)
+- [Loops Warm-up Exercises](./exercises/week-3-warm-up.md)
+- [Loops Exercises](./exercises/week-3-loops.md)
+- [Strings & Dates Warm-up Exercises](./exercises/week-4-warm-up.md)
+- [Strings & Dates Exercises](./exercises/week-4-strings-dates.md)
+- [Arrays & Lists Warm-up Exercises](./exercises/week-5-warm-up.md)
+- [Arrays & Lists Exercises](./exercises/week-5-arrays-lists.md)
+- [Methods Warm-up Exercises](./exercises/week-6-warm-up.md)
+- [Methods Exercises](./exercises/week-6-methods.md)
+- [Classes & Objects Warm-up Exercises](./exercises/week-7-warm-up.md)
+- [Classes & Objects Exercises](./exercises/week-7-classes-objects.md)
+
