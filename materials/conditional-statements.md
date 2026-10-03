@@ -20,7 +20,7 @@ if (grade == 5) {
   System.out.println("That is the best possible grade!");
 }
 
-System.out.println("Good bye!");
+System.out.println("Goodbye!");
 ```
 
 ```
@@ -41,7 +41,7 @@ if (number == 5) {
   System.out.print("That is not the best possible grade");
 }
 
-System.out.println("Good bye!");
+System.out.println("Goodbye!");
 ```
 
 ```
@@ -67,7 +67,7 @@ if (number == 1) {
   System.out.println("That is an awesome grade!");
 }
 
-System.out.println("Good bye!");
+System.out.println("Goodbye!");
 ```
 
 ```
