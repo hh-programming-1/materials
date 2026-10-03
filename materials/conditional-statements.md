@@ -34,7 +34,7 @@ Goodbye!
 ```java
 int grade = 3;
 
-if (number == 5) {
+if (grade == 5) {
   System.out.println("That is the best possible grade!");
 } else {
   // This block is executed if the condition is not met
