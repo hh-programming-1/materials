@@ -130,6 +130,8 @@ if (grade == 4 || grade == 5)
 if (grade > 2 && grade < 5)
 // Weekday matches "Saturday" or "Sunday"
 if (weekday.equals("Saturday") || weekday.equals("Sunday"))
+// Weekday does not match "Monday"
+if (!weekday.equals("Monday"))
 ```
 
 ## Conditional statement example: temperature description
