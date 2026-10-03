@@ -89,11 +89,11 @@ at java.lang.Integer.parseInt(Unknown Source)
 at UserInputExample.main(UserInputExample.java:8)
 ```
 
-- In this case, the `parseInt` method throws an `NumberFormatException`, causing the program to crash. This can be handled with a `try` and `catch` statements which we will cover later
+- In this case, the `parseInt` method throws a `NumberFormatException`, causing the program to crash. This can be handled with `try` and `catch` statements, which we will cover later
 
 ## User input example: BMI calculation
 
-> _"Write a program that asks the user for their height (meters) and weight (kilograms). Based on this information, the program calculates their body mass index (BMI) and prints it. BMI is calculated by dividing the weight by the square of the height. Display the BMI in two decimal accurary."_
+> Write a program that asks the user for their height (meters) and weight (kilograms). Based on this information, the program calculates their body mass index (BMI) and prints it. BMI is calculated by dividing the weight by the square of the height. Display the BMI in two decimal places.
 
 ```java
 // Import built-in Scanner and DecimalFormat
@@ -111,7 +111,7 @@ public class BMICalculator {
         System.out.print("Enter weight (kg): ");
         String weightInput = input.nextLine();
 
-        // Turn the strings values to doubles in order to calculate the BMI
+        // Turn the string values into doubles to calculate the BMI
         double height = Double.parseDouble(heightInput);
         double weight = Double.parseDouble(weightInput);
         double bmi = weight / (height * height); // Or weight / Math.pow(height, 2)
