@@ -189,7 +189,7 @@ Friday
 
 ## Switch statement example: grade description
 
-> _Write a program which asks for a grade (0-5) and prints its description ("Weak" for 0, "Satisfactory" for 2, "Good" for 4 or 3, and "Excellent" for 5). If the grade is not within 0-5 range, the program should print "Invalid grade"._
+> Write a program which asks for a grade (0-5) and prints its description ("Weak" for 0, "Satisfactory" for 2, "Good" for 4 or 3, and "Excellent" for 5). If the grade is not within 0-5 range, the program should print "Invalid grade".
 
 ```java
 public static void main(String[] args) {
