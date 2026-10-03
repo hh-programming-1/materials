@@ -230,7 +230,7 @@ $$
 \texttt{;}
 $$
 
-- The `?` operator can be used to assign a value based on a condition
+- The `?` **ternary operator** can be used to assign a value based on a condition
 - The condition is written before the `?` symbol. The value before the `:` is returned if the condition is true, while the value after the : is returned if the condition is false
 - It is commonly used to replace simple `if` statements
 
