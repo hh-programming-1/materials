@@ -101,9 +101,32 @@ Goodbye!
 > [!TIP]
 > The `||` or operator can be written with the <kbd>alt gr</kbd> + <kbd>< ></kbd> key combination.
 
+
+## Comparing strings
+
+- Even though we can compare integer, double and boolean values using two equals signs (`variable1 == variable2`), **we cannot compare the equality of strings using two equals signs**
+- This is because strings are in fact **objects** and with objects, `==` compares whether two variables refer to the same object, not whether they contain the same text
+- This is why strings are compared using the `equals` method
+
+```java
+String weekday = "Monday";
+
+// We check if the weekday variable's text matches "Monday"
+// Instead of "Monday", the equals method could also contain another string variable, e.g. weekday.equals(hatedWeekday)
+if (weekday.equals("Monday")) {
+    System.out.println("I hate Mondays!");
+} else {
+    System.out.println("What a nice weekday!");
+}
+```
+
+```text
+I hate Mondays!
+```
+
 ## Conditional statement example: temperature description
 
-> Write a program that asks for the temperature. If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm".
+> Write a program that asks for the temperature. If temparature is less than -90°C or greater than 60°C, the program prints "Invalid temperature". If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm".
 
 ```java
 public static void main(String[] args) {
@@ -111,7 +134,9 @@ public static void main(String[] args) {
     System.out.print("Enter the temperature: ");
     int temperature = Integer.parseInt(input.nextLine());
 
-    if (temperature < 0) {
+    if (temperature < 90 || temperature > 60) {
+        System.out.println("Invalid temperature");
+    } else if (temperature < 0) {
         System.out.println("It is freezing");
     } else if (temperature < 20) {
         System.out.println("It is cool");
