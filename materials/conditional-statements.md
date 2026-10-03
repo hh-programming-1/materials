@@ -124,13 +124,13 @@ I hate Mondays!
 > The `||` or operator can be written with the <kbd>alt gr</kbd> + <kbd>< ></kbd> key combination.
 
 ```java
-// Grade is 4 or 5
+// Grade equals 4 OR 5
 if (grade == 4 || grade == 5)
-// Grade is larger than 2 and smaller than 5
+// Grade is greater than 2 AND less than 5
 if (grade > 2 && grade < 5)
-// Weekday matches "Saturday" or "Sunday"
+// Weekday matches "Saturday" OR "Sunday"
 if (weekday.equals("Saturday") || weekday.equals("Sunday"))
-// Weekday does not match "Monday"
+// Weekday does NOT match "Monday"
 if (!weekday.equals("Monday"))
 ```
 
