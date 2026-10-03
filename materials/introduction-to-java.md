@@ -289,6 +289,8 @@ System.out.println(1 + 2); // 3
 System.out.println(a + b); // 13
 System.out.println(a - b); // 7
 System.out.println(a * b); // 30
+// Brackets control The order of operations 
+System.out.println(2 * (a + b)); // 26
 System.out.println(a / b); // 3
 System.out.println(a % b); // 1
 ```
