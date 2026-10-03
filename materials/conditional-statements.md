@@ -6,7 +6,7 @@
 - **Control statements** are programming statements that control the order in which statements are executed in a program
 - The most common categorization of control statements includes **conditional statements** (make decisions whether to execute certain statements), **loops** (repeating statements) and **jump statements** (changing the execution flow by e.g. returning from a method call)
 
-## Conditional statements
+## If statement
 
 - The most common conditional statement is the `if` statement
 - The `if` statement specifies a **condition** for executing specific statements within a code block defined by `{}` brackets
@@ -15,7 +15,7 @@
 ```java
 int grade = 3;
 
-// If grade variable's value is 5, the if block is executed
+// If grade variable's value equals 5, the if block is executed. Otherwise we skip to the next statement
 if (grade == 5) {
   System.out.println("That is the best possible grade!");
 }
@@ -27,9 +27,9 @@ System.out.println("Goodbye!");
 Goodbye!
 ```
 
-## If statement
+## Else clause
 
-- An `if` statement can optionally be followed by an `else` statement, which contains statements to be executed if the `if` statement's condition is not met
+- An `if` statement can optionally be followed by an `else` clause, which specifies a code block to execute when the `if` statement's condition is false
 
 ```java
 int grade = 3;
@@ -37,7 +37,7 @@ int grade = 3;
 if (grade == 5) {
   System.out.println("That is the best possible grade!");
 } else {
-  // This block is executed if the condition is not met
+  // This else block is executed when the if statement's condition is false
   System.out.print("That is not the best possible grade");
 }
 
@@ -51,14 +51,14 @@ Goodbye!
 
 ## Chaining conditions in the if statement
 
-- If the condition in an `if` statement is not met, we can use an `else if` statement to check additional conditions
+- If the condition in an `if` statement is false, we can use an `else if` clause to check additional conditions
 
 ```java
 int grade = 3
 
 if (grade == 0) {
   System.out.println("That is a failing grade");
-  // If the previous condition was not met, the next else if condition will be checked
+  // If the previous condition was false, the next else if condition will be checked
 } else if (grade < 3) {
   System.out.println("That grade is not so great");
 } else if (grade < 5) {
@@ -77,7 +77,7 @@ Goodbye!
 
 ## Comparison operators
 
-- The **comparison operators** are used to compare two values, e.g. checking if variable has certain value
+- The **comparison operators** are used to compare two values, e.g. checking if variable's value equals some other value
 
 | Operator | Description              | Example   |
 | -------- | ------------------------ | --------- |
@@ -92,7 +92,7 @@ Goodbye!
 
 - Even though we can compare integer, double and boolean values using two equals signs (`variable1 == variable2`), **we cannot compare the equality of strings using two equals signs**
 - This is because strings are in fact **objects** and with objects, `==` compares whether two variables refer to the same object, not whether they contain the same text
-- This is why strings are compared using the `equals` method. The method returns `true` if the target string matches the parameter and `false` if it doesn't
+- This is why strings are compared using the `equals` method. The method returns `true` if the target string equals the parameter and `false` if it doesn't
 
 ```java
 String weekday = "Monday";
@@ -132,9 +132,15 @@ public static void main(String[] args) {
 }
 ```
 
+```text
+Enter password: secret123
+Enter confirmation: secret123
+Password is valid
+```
+
 ## Logical operators
 
-- The **logical operators** are used to combine conditions e.g. "number is larger than zero AND number is less than ten"
+- The **logical operators** are used to combine conditions, e.g. "grade is greater than zero AND grade is less than 3"
 
 | Operator | Description                                    | Example                  |
 | -------- | ---------------------------------------------- | ------------------------ |
@@ -150,9 +156,9 @@ public static void main(String[] args) {
 if (grade == 4 || grade == 5)
 // Grade is greater than 2 AND less than 5
 if (grade > 2 && grade < 5)
-// Weekday matches "Saturday" OR "Sunday"
+// Weekday equals "Saturday" OR "Sunday"
 if (weekday.equals("Saturday") || weekday.equals("Sunday"))
-// Weekday does NOT match "Monday"
+// Weekday does NOT equal "Monday"
 if (!weekday.equals("Monday"))
 ```
 
@@ -166,7 +172,7 @@ public static void main(String[] args) {
     System.out.print("Enter the temperature: ");
     int temperature = Integer.parseInt(input.nextLine());
 
-    if (temperature < 90 || temperature > 60) {
+    if (temperature < -90 || temperature > 60) {
         System.out.println("Invalid temperature");
     } else if (temperature < 0) {
         System.out.println("It is freezing");
@@ -176,6 +182,11 @@ public static void main(String[] args) {
         System.out.println("It is warm");
     }
 }
+```
+
+```text
+Enter the temperature: 5
+It is cool
 ```
 
 ## Conditional statement example: comission calculation
@@ -201,6 +212,11 @@ public static void main(String[] args) {
 
     System.out.println("The sales commission is " + twoDecimals.format(commission));
 }
+```
+
+```text
+Enter selling price: 100000
+The sales comission is 3440.00
 ```
 
 ## Switch statement
@@ -273,6 +289,11 @@ public static void main(String[] args) {
             break;
     }
 }
+```
+
+```text
+Enter grade (0-5): 4
+Good
 ```
 
 ## The ternary operator

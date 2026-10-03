@@ -25,7 +25,7 @@ public class HelloProgram {
 
 ## Execution order of the example
 
-- When executing the previous example program, we see the printed message _"Enter your name:"_ in the console
+- When executing the previous example program, we see the printed message "Enter your name:" in the console
 - The execution is blocked to the line `String name = input.nextLine();`. This is because the program is waiting for the user input
 - To continue the execution, we must write something to the console and press the <kbd>enter</kbd> key. Providing the input will continue the program's execution and the `System.out.println("Hello " + name);` line is executed
 
@@ -36,7 +36,7 @@ Hello Kalle
 
 ## Reading multiple inputs
 
-- The program can read multiple inputs from the user by having multiple `input.nextLine()` statements. Each statement will block the execution until the input is provided by the user
+- The program can read multiple inputs from the user by having multiple `input.nextLine()` calls. Each call will block the execution until the input is provided by the user
 
 ```java
 Scanner input = new Scanner(System.in);
@@ -57,36 +57,45 @@ Your full name is Kalle Ilves
 
 ## Data type of the input
 
-- The `input.nextLine()` will always provides the user's input as a string value
-- If we want to use the input in calculations or comparisons as a number, we need to convert the string to e.g. integer or double using built-in `parseInt` and `parseDouble` methods
+- The `input.nextLine()` will always return the user's input as a string value
+- If we want to use the input in calculations or comparisons as a number, **we need to convert the string to e.g. integer or double** using built-in `parseInt` and `parseDouble` methods
 - `Scanner` class also provides the `nextInt` and `nextDouble` methods, but their behavior is different and can easily cause programming errors
 
 ```java
 Scanner input = new Scanner(System.in);
 
-System.out.print("Enter your age: ");
+System.out.print("Enter quantity: ");
 // parseInt method converts a string into an integer
-int age = Integer.parseInt(input.nextLine());
-System.out.print("Enter your salary: ")
+int quantity = Integer.parseInt(input.nextLine());
+System.out.print("Enter price: ")
 // parseDouble method converts a string into a double
 // Note that, the decimal separator should be "." in the input, not ","!
-double salary = Double.parseDouble(input.nextLine());
+double price = Double.parseDouble(input.nextLine());
+// Now that the input is converted, we can perform a calculation based on the input
+double total = price * quantity;
+System.out.println("Total price: " + total);
+```
+
+```text
+Enter quantity: 2
+Enter price: 1.5
+Total price: 3.0
 ```
 
 ## Handling invalid input
 
-- In the previous example, the user might provide a invalid age or salary, which will end up with an error
+- In the previous example, the user might provide a invalid quantity or price, which will end up with an error
 
 ```text
-Enter your age: twentyfour
+Enter your quantity: two
 
-Exception in thread "main" java.lang.NumberFormatException: For input string: "twentyfour"
+Exception in thread "main" java.lang.NumberFormatException: For input string: "two"
 at java.lang.NumberFormatException.forInputString(Unknown Source)
 at java.lang.Integer.parseInt(Unknown Source)
 at UserInputExample.main(UserInputExample.java:8)
 ```
 
-- In this case, the `parseInt` method throws a `NumberFormatException`, causing the program to crash. This can be handled with `try` and `catch` statements, which we will cover later
+- In this case, the `parseInt` can't convert the string "two" to an integer, causing the program to crash. This can be handled with `try` and `catch` statements, which we will cover later
 
 ## User input example: BMI calculation
 
