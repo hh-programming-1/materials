@@ -88,20 +88,6 @@ Goodbye!
 | `>=`     | Greater than or equal to | `x >= 10` |
 | `<=`     | Less than or equal to    | `x <= 10` |
 
-## Logical operators
-
-- The **logical operators** are used to combine conditions e.g. "number is larger than zero AND number is less than ten"
-
-| Operator | Description                                    | Example                  |
-| -------- | ---------------------------------------------- | ------------------------ |
-| `&&`     | And, both conditions must be true              | `age >= 18 && age <= 65` |
-| `\|\|`   | Or, one of the conditions must be true         | `day == 6 \|\| day == 7` |
-| `!`      | Not, true becomes false and false becomes true | `!isReady`               |
-
-> [!TIP]
-> The `||` or operator can be written with the <kbd>alt gr</kbd> + <kbd>< ></kbd> key combination.
-
-
 ## Comparing strings
 
 - Even though we can compare integer, double and boolean values using two equals signs (`variable1 == variable2`), **we cannot compare the equality of strings using two equals signs**
@@ -122,6 +108,28 @@ if (weekday.equals("Monday")) {
 
 ```text
 I hate Mondays!
+```
+
+## Logical operators
+
+- The **logical operators** are used to combine conditions e.g. "number is larger than zero AND number is less than ten"
+
+| Operator | Description                                    | Example                  |
+| -------- | ---------------------------------------------- | ------------------------ |
+| `&&`     | And, both conditions must be true              | `age >= 18 && age <= 65` |
+| `\|\|`   | Or, one of the conditions must be true         | `day == 6 \|\| day == 7` |
+| `!`      | Not, true becomes false and false becomes true | `!isReady`               |
+
+> [!TIP]
+> The `||` or operator can be written with the <kbd>alt gr</kbd> + <kbd>< ></kbd> key combination.
+
+```java
+// Grade is 4 or 5
+if (grade == 4 || grade == 5)
+// Grade is larger than 2 and smaller than 5
+if (grade > 2 && grade < 5)
+// Weekday matches "Saturday" or "Sunday"
+if (weekday.equals("Saturday") || weekday.equals("Sunday"))
 ```
 
 ## Conditional statement example: temperature description
