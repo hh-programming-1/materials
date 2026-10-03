@@ -65,10 +65,10 @@ Your full name is Kalle Ilves
 Scanner input = new Scanner(System.in);
 
 System.out.print("Enter your age: ");
-// parseInt method converts the user's input string into an integer
+// parseInt method converts a string into an integer
 int age = Integer.parseInt(input.nextLine());
 System.out.print("Enter your salary: ")
-// parseDouble method converts the user's input string into a double
+// parseDouble method converts a string into a double
 // Note that, the decimal separator should be "." in the input, not ","!
 double salary = Double.parseDouble(input.nextLine());
 ```
