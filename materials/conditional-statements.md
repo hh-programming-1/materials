@@ -106,7 +106,7 @@ Goodbye!
 
 - Even though we can compare integer, double and boolean values using two equals signs (`variable1 == variable2`), **we cannot compare the equality of strings using two equals signs**
 - This is because strings are in fact **objects** and with objects, `==` compares whether two variables refer to the same object, not whether they contain the same text
-- This is why strings are compared using the `equals` method
+- This is why strings are compared using the `equals` method. The method returns `true` if the target string matches the parameter and `false` if it doesn't
 
 ```java
 String weekday = "Monday";
