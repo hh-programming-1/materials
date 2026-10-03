@@ -56,7 +56,7 @@ Goodbye!
 ```java
 int grade = 3
 
-if (number == 1) {
+if (number == 0) {
   System.out.println("That is a failing grade");
   // If the previous condition was not met, the next else if condition will be checked
 } else if (grade < 3) {
