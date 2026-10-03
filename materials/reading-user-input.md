@@ -58,17 +58,17 @@ Your full name is Kalle Ilves
 ## Data type of the input
 
 - The `input.nextLine()` will always provides the user's input as a string value
-- We can transform the strings to e.g. integers or doubles using built-in `parseInt` and `parseDouble` methods
+- If we want to use the input in calculations or comparisons as a number, we need to convert the string to e.g. integer or double using built-in `parseInt` and `parseDouble` methods
 - `Scanner` class also provides the `nextInt` and `nextDouble` methods, but their behavior is different and can easily cause programming errors
 
 ```java
 Scanner input = new Scanner(System.in);
 
 System.out.print("Enter your age: ");
-// parseInt method transforms the user's input string into an integer
+// parseInt method converts the user's input string into an integer
 int age = Integer.parseInt(input.nextLine());
 System.out.print("Enter your salary: ")
-// parseDouble method transforms the user's input string into a double
+// parseDouble method converts the user's input string into a double
 // Note that, the decimal separator should be "." in the input, not ","!
 double salary = Double.parseDouble(input.nextLine());
 ```
@@ -103,7 +103,7 @@ public class BMICalculator {
         DecimalFormat twoDecimals = new DecimalFormat("0.00");
 
         System.out.print("Enter height (m): ");
-        // Transform the string input into double to calculate the BMI
+        // Convert the string input into double to calculate the BMI
         double height = Double.parseDouble(input.nextLine());
 
         System.out.print("Enter weight (kg): ");
