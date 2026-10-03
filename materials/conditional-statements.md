@@ -110,6 +110,28 @@ if (weekday.equals("Monday")) {
 I hate Mondays!
 ```
 
+## Comparing strings example: password confirmation 
+
+> Write a program that asks for password and password confirmation. If the password matches the confirmation program prints "Password is valid", otherwise it prints "Error, the password does not match the confirmation!".
+
+```java
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter password: ");
+    String password = input.nextLine();
+
+    System.out.print("Confirm password: ");
+    String confirmation = input.nextLine();
+
+    if (password.equals(confirmation)) {
+        System.out.println("Password is valid");
+    } else {
+        System.out.println("Error, the password does not match the confirmation!");
+    }
+}
+```
+
 ## Logical operators
 
 - The **logical operators** are used to combine conditions e.g. "number is larger than zero AND number is less than ten"
