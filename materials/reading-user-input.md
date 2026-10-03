@@ -65,15 +65,12 @@ Your full name is Kalle Ilves
 Scanner input = new Scanner(System.in);
 
 System.out.print("Enter your age: ");
-String ageInput = input.nextLine();
+// parseInt method transforms the user's input string into an integer
+int age = Integer.parseInt(input.nextLine());
 System.out.print("Enter your salary: ")
-String salaryInput = input.nextLine();
-
-// Turn the value of ageInput string into the corresponding integer
-int age = Integer.parseInt(ageInput);
-// Turn the value of salaryInput string into the corresponding double
+// parseDouble method transforms the user's input string into a double
 // Note that, the decimal separator should be "." in the input, not ","!
-double salary = Double.parseDouble(salaryInput);
+double salary = Double.parseDouble(input.nextLine());
 ```
 
 ## Handling invalid input
@@ -106,14 +103,12 @@ public class BMICalculator {
         DecimalFormat twoDecimals = new DecimalFormat("0.00");
 
         System.out.print("Enter height (m): ");
-        String heightInput = input.nextLine();
+        // Transform the string input into double to calculate the BMI
+        double height = Double.parseDouble(input.nextLine());
 
         System.out.print("Enter weight (kg): ");
-        String weightInput = input.nextLine();
-
-        // Turn the string values into doubles to calculate the BMI
-        double height = Double.parseDouble(heightInput);
-        double weight = Double.parseDouble(weightInput);
+        double weight = Double.parseDouble(input.nextLine());
+      
         double bmi = weight / (height * height); // Or weight / Math.pow(height, 2)
 
         System.out.println("Your BMI is " + twoDecimals.format(bmi));
