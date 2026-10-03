@@ -29,7 +29,7 @@ Good bye!
 
 ## If statement
 
-- The `if` statement can optionally be followed by a `else` statement, providing statements to be executed if the condition is not met
+- An `if` statement can optionally be followed by an `else` statement, which contains statements to be executed if the if condition is not met
 
 ```java
 int grade = 3;
@@ -51,7 +51,7 @@ Good bye!
 
 ## Chaining conditions in the if statement
 
-- In case the `if` statements condition is not met, we can provide additional conditions to check using the `if else` statement
+- If the condition in an `if` statement is not met, we can use an `else if` statement to check additional conditions.
 
 ```java
 int grade = 3
@@ -103,7 +103,7 @@ Good bye!
 
 ## Conditional statement example: temperature description
 
-> _"Write a program that asks for the temperature. If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm"._
+> Write a program that asks for the temperature. If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm".
 
 ```java
 public static void main(String[] args) {
@@ -123,7 +123,7 @@ public static void main(String[] args) {
 
 ## Conditional statement example: comission calculation
 
-> _"Write a program that asks for the selling price of an apartment and calculates the real estate agent's commission for the sale. The commission is 3.44% of the selling price, but at least €2,214."_
+> Write a program that asks for the selling price of an apartment and calculates the real estate agent's commission for the sale. The commission is 3.44% of the selling price, but at least €2,214."
 
 ```java
 public static void main(String[] args) {
@@ -149,11 +149,12 @@ public static void main(String[] args) {
 ## Switch statement
 
 - A `switch` statement allows a program to choose between multiple blocks of code based on the value of a variable or expression
+- The value is compared against several possible cases, and the block of code that matches the value is executed. A default case can optionally be used to handle values that do not match any of the cases
 
 ```java
 int day = 5;
 
-// Switch specifies the value we want to check, day variable in this case
+// Switch specifies the value we want to check, the day variable in this case
 switch (day) {
     // Case specifies a value to match against the switch expression
     case 1:
@@ -182,9 +183,13 @@ switch (day) {
 }
 ```
 
+```text
+Friday
+```
+
 ## Switch statement example: grade description
 
-> _"Write a program which asks for a grade (0-5) and prints its description ("Weak" for 0, "Satisfactory" for 2, "Good" for 4 or 3, and "Excellent" for 5). If the grade is not within 0-5 range, the program should print "Invalid grade"."_
+> _Write a program which asks for a grade (0-5) and prints its description ("Weak" for 0, "Satisfactory" for 2, "Good" for 4 or 3, and "Excellent" for 5). If the grade is not within 0-5 range, the program should print "Invalid grade"._
 
 ```java
 public static void main(String[] args) {
@@ -245,4 +250,8 @@ int age = 20;
 String description = age >= 18 ? "Adult" : "Minor";
 
 System.out.println(description);
+```
+
+```text
+Adult
 ```
