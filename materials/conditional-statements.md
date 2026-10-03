@@ -24,12 +24,12 @@ System.out.println("Good bye!");
 ```
 
 ```
-Good bye!
+Goodbye!
 ```
 
 ## If statement
 
-- An `if` statement can optionally be followed by an `else` statement, which contains statements to be executed if the if condition is not met
+- An `if` statement can optionally be followed by an `else` statement, which contains statements to be executed if the `if` statement's condition is not met
 
 ```java
 int grade = 3;
@@ -46,12 +46,12 @@ System.out.println("Good bye!");
 
 ```
 That is not the best possible grade
-Good bye!
+Goodbye!
 ```
 
 ## Chaining conditions in the if statement
 
-- If the condition in an `if` statement is not met, we can use an `else if` statement to check additional conditions.
+- If the condition in an `if` statement is not met, we can use an `else if` statement to check additional conditions
 
 ```java
 int grade = 3
@@ -72,7 +72,7 @@ System.out.println("Good bye!");
 
 ```
 That is a pretty good grade
-Good bye!
+Goodbye!
 ```
 
 ## Comparison operators
