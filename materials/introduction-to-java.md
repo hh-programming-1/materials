@@ -26,9 +26,9 @@
 ## Java programming language
 
 - Java is an **object-oriented** programming language, meaning that programs consist of pieces called **classes**
-- It is platform independent because Java code is compiled to bytecode, which runs on the **Java Virtual Machine (JVM)**
+- It is also a **strongly-typed** language, meaning that each variable is defined with a fixed data type (e.g, `int` for integers and `String` for strings)
+- Java is platform independent because Java code is compiled to bytecode, which runs on the **Java Virtual Machine (JVM)**
 - Java is commonly used for large systems, backend services, and Android mobile applications
-- Java is a strongly-typed language, meaning that each variable is defined with a fixed data type (e.g, `int` for integers and `String` for strings)
 
 ## Java for JavaScript programmers
 
