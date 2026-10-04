@@ -52,16 +52,18 @@ Goodbye!
 ## Chaining conditions in the if statement
 
 - If the condition in an `if` statement is false, we can use an `else if` clause to check additional conditions
+- The comparisons are executed top down. When execution reaches a `else if` clause whose condition is true, its block is executed and the comparison stops
 
 ```java
 int grade = 3
 
 if (grade == 0) {
   System.out.println("That is a failing grade");
-  // If the previous condition was false, the next else if condition will be checked
+  // If the condition is false, the next else if condition will be checked
 } else if (grade < 3) {
   System.out.println("That grade is not so great");
 } else if (grade < 5) {
+  // When condition is true, the block is executed and the comparison stops
   System.out.println("That is a pretty good grade");
 } else {
   System.out.println("That is an awesome grade!");
