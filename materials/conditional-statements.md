@@ -112,7 +112,7 @@ I hate Mondays!
 
 ## Comparing strings example: password confirmation 
 
-> Write a program that asks for password and password confirmation. If the password matches the confirmation program prints "Password is valid", otherwise it prints "Error, the password does not match the confirmation!".
+> Write a program that asks for password and password confirmation. If the password matches the confirmation, the program prints "The password is valid". Otherwise it prints "Error, the password does not match the confirmation!".
 
 ```java
 public static void main(String[] args) {
@@ -125,7 +125,7 @@ public static void main(String[] args) {
     String confirmation = input.nextLine();
 
     if (password.equals(confirmation)) {
-        System.out.println("Password is valid");
+        System.out.println("The password is valid");
     } else {
         System.out.println("Error, the password does not match the confirmation!");
     }
@@ -135,7 +135,7 @@ public static void main(String[] args) {
 ```text
 Enter password: secret123
 Enter confirmation: secret123
-Password is valid
+The password is valid
 ```
 
 ## Logical operators
