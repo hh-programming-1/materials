@@ -7,18 +7,16 @@ package week2;
 
 import java.util.Scanner;
 
-public class WarmUp2 {
+public class WarmUp1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter your age: ");
-        int age = Integer.parseInt(input.nextLine());
+        System.out.print("Do you want to proceed: ");
+        String value = input.nextLine();
 
-        if (age < 0 || age > 120) {
-            System.out.println("Your age is invalid");
-        } if (age >= 18) {
-            System.out.println("You are an adult");
+        if (value.equals("yes") || value.equals("ok")) {
+            System.out.println("Proceeding");
         } else {
-            System.out.println("You are a minor");
+            System.out.println("Cancelling");
         }
     }
 }
@@ -34,13 +32,15 @@ import java.util.Scanner;
 public class WarmUp2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Do you want to proceed: ");
-        String value = input.nextLine();
+        System.out.print("Enter your age: ");
+        int age = Integer.parseInt(input.nextLine());
 
-        if (value.equals("yes") || value.equals("ok")) {
-            System.out.println("Proceeding");
+        if (age < 0 || age > 120) {
+            System.out.println("Your age is invalid");
+        } if (age >= 18) {
+            System.out.println("You are an adult");
         } else {
-            System.out.println("Cancelling");
+            System.out.println("You are a minor");
         }
     }
 }

@@ -9,7 +9,7 @@
 ## If statement
 
 - The most common conditional statement is the `if` statement
-- A `if` statement specifies a **condition**. If the condition is true, a code block within the  `{}` brackets is executed
+- An `if` statement specifies a **condition**. If the condition is true, a code block within the  `{}` brackets is executed
 - The condition **must evaluate to either true or false** and is commonly constructed using comparison (e.g. `==` and `<`) and logical operators (e.g. `&&` and `||`)
 
 ```java

@@ -17,6 +17,30 @@ src/
 
 ## Warm-up exercise 1
 
+Ask the user wheter they want to proceed. If the user enters string "yes" or "ok", print "Proceeding". Otherwise, print "Cancelling".
+
+Examples:
+
+```text
+Do you want to proceed?: yes
+Proceeding
+```
+
+```text
+Do you want to proceed?: ok
+Proceeding
+```
+
+```text
+Do you want to proceed?: no
+Cancelling
+```
+
+> [!TIP]
+> String equality check must be done using the `equals` method.
+
+## Warm-up exercise 2
+
 Ask the user for their age. If the age is less than 0 or greater than 120, print that their age is invalid. If they their age is less than 18 print that they are a minor. Otherwise, print that they are an adult.
 
 Examples:
@@ -30,30 +54,6 @@ You are an adult
 Enter your age: 16
 You are a minor
 ```
-
-## Warm-up exercise 2
-
-Ask the user wheter they want to proceed. If the user enters string "yes" or "ok", print "Proceeding". Otherwise, print "Cancelling".
-
-Examples:
-
-```text
-Do you want to proceed: yes
-Proceeding
-```
-
-```text
-Do you want to proceed: ok
-Proceeding
-```
-
-```text
-Do you want to proceed: no
-Cancelling
-```
-
-> [!TIP]
-> Remember that strings are compared using the `equals` method, for example `stringVariable.equals("text")`. 
 
 ## Warm-up exercise 3
 
