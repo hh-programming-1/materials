@@ -9,8 +9,8 @@
 ## If statement
 
 - The most common conditional statement is the `if` statement
-- The `if` statement specifies a **condition** for executing specific statements within a code block defined by `{}` brackets
-- The condition **must evaluate to either true or false** and is commonly constructed using comparison (e.g. `<`) and logical operators (e.g. `&&`)
+- A `if` statement specifies a **condition**. If the condition is true, a code block within the  `{}` brackets is executed
+- The condition **must evaluate to either true or false** and is commonly constructed using comparison (e.g. `==` and `<`) and logical operators (e.g. `&&` and `||`)
 
 ```java
 int grade = 3;
@@ -52,7 +52,7 @@ Goodbye!
 ## Else if clause
 
 - If the condition in an `if` statement is false, we can use an `else if` clause to check additional conditions
-- The comparisons are executed top down. When execution reaches a `else if` clause whose condition is true, its block is executed and the comparison stops
+- The conditions are checked top down. When execution reaches a `else if` clause whose condition is true, its code block is executed and the checking stops
 
 ```java
 int grade = 3
@@ -63,7 +63,7 @@ if (grade == 0) {
 } else if (grade < 3) {
   System.out.println("That grade is not so great");
 } else if (grade < 5) {
-  // When condition is true, the block is executed and the comparison stops
+  // When condition is true, the code block is executed and the checking stops
   System.out.println("That is a pretty good grade");
 } else {
   System.out.println("That is an awesome grade!");
