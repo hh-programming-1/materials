@@ -164,6 +164,28 @@ if (weekday.equals("Saturday") || weekday.equals("Sunday"))
 if (!weekday.equals("Monday"))
 ```
 
+## The boolean data type
+
+- The value that goes between the parentheses of the conditional statement should be of type `boolean` after the evaluation. boolean type variables are either true or false
+- Comparison operators can also be used outside of conditionals. In those cases, the boolean value resulting from the comparison is stored in a boolean variable for later use
+
+```java
+int grade = 5;
+// Boolean variables are either true or false
+boolean javaIsFun = true;
+// Comparisons can be stored to boolean variables
+boolean isFailingGrade = grade == 0; // Grade equals 5, so isFailingGrade will be false
+boolean isPassingGrade = grade > 0; // Grade equals 5, so isPassingGrade will be true
+// Boolean variables can be used in conditions
+if (isPassingGrade) {
+    System.out.println("Congratulations, you have passed the course!");
+}
+```
+
+```
+Congratulations, you have passed the course!
+```
+
 ## Conditional statement example: temperature description
 
 > Write a program that asks for the temperature. If temparature is less than -90°C or greater than 60°C, the program prints "Invalid temperature". If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm".

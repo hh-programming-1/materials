@@ -60,7 +60,7 @@ Using the following `main` method as a template, implement that calculates and p
 
 ```java
 public static void main(String[] args) {
-    int[] points = {1, 2, 3, 16, 20};
+    int[] points = {3, 1, 2, 16, 20, 7, 9, 29, 18, 12};
     // Write your code here
 }
 ```
