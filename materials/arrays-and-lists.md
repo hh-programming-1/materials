@@ -9,14 +9,18 @@
 
 ## Arrays
 
+$$
+\begin{array}{c|c|c|c|c|c} \text{Index} & 0 & 1 & 2 & 3 & 4 \\\ \hline \text{Element} & 5 & 2 & 4 & 1 & 4 \end{array}
+$$
+
 - An **array** is data structure for storing for storing multiple values in a single variable
 - It contains a **limited amount of numbered spots** (indices) for values
 - The length (or size) of an array is the amount of these spots, i.e. how many values can you place in the array
 - The values in an array are called **elements**
 
 ```java
-// Initialize an grades array that can store 10 integers
-int[] grades = new int[10];
+// Initialize an grades array that can store 5 integers
+int[] grades = new int[5];
 ```
 
 ## Creating an array
@@ -33,15 +37,15 @@ $$
 
 - Array contains elements of a specific type. This type is specified when we define the type of the array before the `[]` brackets, e.g. `int[]`
 - The array can **only contain elements of the specified type**
-- The length of the array is fixed and it is defined when the array variable is initialized, e.g. `new int[10]`
+- The length of the array is fixed and it is defined when the array variable is initialized, e.g. `new int[5]`
 
 ```java
-// Initialize a grades array that can store 10 integers
-int[] grades = new int[10];
-// Initialize a names array that can store 5 strings
-String[] names = new String[5];
-// Initialize a prices array can store 15 doubles
-double[] prices = new double[5];
+// Initialize a grades array that can store 5 integers
+int[] grades = new int[5];
+// Initialize a names array that can store 10 strings
+String[] names = new String[10];
+// Initialize a prices array can store 10 doubles
+double[] prices = new double[10];
 // We can also initialize an array with predefined elements
 // The numbers array can store 4 integers with initial elements of 1, 2, 3 and 4
 int[] numbers = {1, 2, 3, 4};
@@ -53,15 +57,15 @@ int[] numbers = {1, 2, 3, 4};
 - Assigning a value to a specific spot of an array works much like assigning a value in a normal variable, but in the array you must specify the index within `[]` brackets, i.e. to which spot you want to assign the value
 
 ```java
-int[] numbers = new int[3];
+int[] numbers = new int[2];
 // The index is specified in square brackets
 // Note that 0 is the first index!
 numbers[0] = 2;
-numbers[2] = 5;
+numbers[1] = 5;
 
-// Print elements in array index 0 and 2
+// Print elements in array index 0 and 1
 System.out.println(numbers[0]);
-System.out.println(numbers[2]);
+System.out.println(numbers[1]);
 ```
 
 ```
@@ -75,11 +79,7 @@ System.out.println(numbers[2]);
 - We can iterate over the array, i.e. go through each element of the array with a `for` loop
 
 ```java
-int[] numbers = new int[4];
-numbers[0] = 42;
-numbers[1] = 13;
-numbers[2] = 12;
-numbers[3] = 7;
+int[] numbers = {42, 13, 12, 7}
 
 System.out.println("The array has " + numbers.length + " elements");
 
