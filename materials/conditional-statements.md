@@ -112,7 +112,7 @@ if (weekday.equals("Monday")) {
 I hate Mondays!
 ```
 
-## Comparing strings example: password confirmation 
+## 💡 Comparing strings example: password confirmation 
 
 > Write a program that asks for password and password confirmation. If the password matches the confirmation, the program prints "The password is valid". Otherwise it prints "Error, the password does not match the confirmation!".
 
@@ -186,7 +186,7 @@ if (isPassingGrade) {
 Congratulations, you have passed the course!
 ```
 
-## Conditional statement example: temperature description
+## 💡 Conditional statement example: temperature description
 
 > Write a program that asks for the temperature. If temparature is less than -90°C or greater than 60°C, the program prints "Invalid temperature". If temperature is less than 0°C, the program prints "It is freezing", if it is less than 20°C it prints "It is cool" and otherwise it prints "It is warm".
 
@@ -213,7 +213,7 @@ Enter the temperature: 5
 It is cool
 ```
 
-## Conditional statement example: comission calculation
+## 💡 Conditional statement example: comission calculation
 
 > Write a program that asks for the selling price of an apartment and calculates the real estate agent's commission for the sale. The commission is 3.44% of the selling price, but at least €2,214."
 
@@ -284,7 +284,7 @@ switch (day) {
 Friday
 ```
 
-## Switch statement example: grade description
+## 💡 Switch statement example: grade description
 
 > Write a program which asks for a grade (0-5) and prints its description ("Weak" for 0, "Satisfactory" for 2, "Good" for 4 or 3, and "Excellent" for 5). If the grade is not within 0-5 range, the program should print "Invalid grade".
 

@@ -97,7 +97,7 @@ at UserInputExample.main(UserInputExample.java:8)
 
 - In this case, the `parseInt` can't convert the string "two" to an integer, causing the program to crash. This can be handled with `try` and `catch` statements, which we will cover later
 
-## User input example: BMI calculation
+## 💡 User input example: BMI calculation
 
 > Write a program that asks the user for their height (meters) and weight (kilograms). Based on this information, the program calculates their body mass index (BMI) and prints it. BMI is calculated by dividing the weight by the square of the height. Display the BMI in two decimal places.
 
