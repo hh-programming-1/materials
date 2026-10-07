@@ -9,6 +9,13 @@ Materials for the Haage-Helia's Programming 1 course.
 - [Setting up the Java development environment](./materials/jdk-vscode.md)
 - [Getting started with Viope](./materials//viope.md)
 - [Conditional statements](./materials/conditional-statements.md)
+- [Loops](./materials/loops.md)
+- [Strings and regular expressions](./materials/strings-and-regular-expressions.md)
+- [Dates](./materials/dates.md)
+- [Arrays and lists](./materials/arrays-and-lists.md)
+- [Exception handling](./materials/exception-handling.md)
+- [Classes and objects](./materials/classes-and-objects.md)
+- [File handling](./materials/file-handling.md)
 
 ## Exercises
 
