@@ -30,9 +30,9 @@ $$
 \quad
 \underbrace{\texttt{grades}}_{\text{variable name}}
 \quad
-\underbrace{\texttt{=}}_{\text{assignment operator}}
+\texttt{=}_{}
 \quad
-\underbrace{\texttt{new int[10]}}_{\text{create an array of 10 integers}}
+\underbrace{\texttt{new int[5]}}_{\text{create an array of 5 integers}}
 $$
 
 - Array contains elements of a specific type. This type is specified when we define the type of the array before the `[]` brackets, e.g. `int[]`
@@ -114,7 +114,7 @@ numbers[3] = 7;
 numbers[4] = 7;
 ```
 
-## Array example: shopping list
+## 💡 Array example: shopping list
 
 > Write a program which asks how many items there are on the shopping list. Then, the program asks to enter a shopping list item until all items are provided. Finally, the items should be printed.
 
@@ -169,7 +169,7 @@ $$
 \quad
 \underbrace{\texttt{names}}_{\text{variable name}}
 \quad
-\underbrace{\texttt{=}}_{\text{assignment operator}}
+\texttt{=}_{}
 \quad
 \underbrace{\texttt{new ArrayList\<\>()}}_{\text{create an empty list}}
 $$
@@ -291,7 +291,7 @@ for (Integer grade : grades) {
 2
 ```
 
-## List example: total price
+## 💡 List example: total price
 
 > Write a program which asks for a price until an empty string "" is entered. After the empty string, the program should print the total sum of the prices.
 

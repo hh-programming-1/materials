@@ -66,7 +66,7 @@ Exit? (y exits): y
 Ready!
 ```
 
-## While loop example: total exercise points
+## 💡 While loop example: total exercise points
 
 > Write a program which asks for exericse points until a empty string is entered. When the empty string is entered, the program should print the total sum of the exercise points.
 
@@ -129,7 +129,7 @@ Enter a positive integer: 4
 Your input was 4
 ```
 
-## While loop example: counting positive numbers
+## 💡 While loop example: counting positive numbers
 
 > Write a program which asks for a number until a empty string is entered. The program should count every positive number entered. When the empty string is entered, the program should print the number of entered positive numbers.
 
@@ -206,3 +206,73 @@ for (int i = 0; i < 5; i++) {
 3
 4
 ```
+
+## Changing a variable value
+
+- In Java (like in most programming languages), there are shorter versions for increasing, decreasing or multiplying a variable's value by certain amount
+
+```java
+int i = 1;
+
+// Two ways to increase i by one
+i = i + 1;
+i++;
+// Two ways to decrease i by one
+i = i - 1;
+i--;
+// Two ways to increase i by 10
+i = i + 10;
+i += 10;
+// Two ways to decrease i by 10
+i = i - 10;
+i -= 10;
+// Two ways to multiply i by 10
+i = i * 10;
+i *= 10;
+```
+
+## 💡 For loop example: printing even numbers
+
+> Write a program which asks a number. Then, the program prints all even numbers until that number.
+
+```java
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter a number: ");
+    int number = Integer.parseInt(input.nextLine());
+
+    for (int i = 0; i <= number; i += 2) {
+        System.out.println(i);
+    }
+}
+```
+
+## 💡 Nested for loop example: printing a rectangle
+
+> Write a program which asks user for rectangle width and height. Then, the program prints a rectangle of these dimensions filled with a "+" symbol.
+
+```java
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter rectangle width: ");
+    int width = Integer.parseInt(input.nextLine());
+    System.out.print("Enter rectangle height: ");
+    int height = Integer.parseInt(input.nextLine());
+
+    for (int row = 0; row < height; row++) {
+        for (int column = 0; column < width; column++) {
+            System.out.print("+");
+        }
+        System.out.println("");
+    }
+}
+```
+
+````
+Enter rectangle width: 4
+Enter rectangle height: 3
+++++
+++++
+++++
