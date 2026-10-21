@@ -291,6 +291,23 @@ for (Integer grade : grades) {
 2
 ```
 
+## Useful methods of a list
+
+- Lists have many useful methods for manipulating the contents of the list and inspecting its contents
+
+```java
+ArrayList<String> weekdays = List.of("Monday", "Tuesday", "Wednesday");
+
+weekdays.add("Thursday"); 
+weekdays.remove(0); // remove list element in index 0
+weekdays.remove("Tuesday"); // remove list element with the provided value
+
+// check if list contains element with the provided value
+if (weekdays.contains("Monday")) {
+    System.out.println("I hate Mondays!");
+}
+```
+
 ## 💡 List example: total price
 
 > Write a program which asks for a price until an empty string "" is entered. After the empty string, the program should print the total sum of the prices.
