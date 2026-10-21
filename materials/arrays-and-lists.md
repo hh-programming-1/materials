@@ -302,11 +302,19 @@ weekdays.add("Thursday");
 weekdays.remove(0); // remove list element in index 0
 weekdays.remove("Tuesday"); // remove list element with the provided value
 
-// check if list contains element with the provided value
+// size returns the number of elements on the list
+if(weekdays.size() > 2) {
+    System.out.println("So many days"); 
+}
+
+// contains returns true if element with the provided value is on the list, otherwise false
 if (weekdays.contains("Monday")) {
     System.out.println("I hate Mondays!");
 }
-```
+
+// indexOf returns the index of the provided element on the list, or -1 if it is not on the list
+System.out.println("Index of 'Monday' on the list: " + weekdays.indexOf("Monday"));
+``` 
 
 ## 💡 List example: total price
 
