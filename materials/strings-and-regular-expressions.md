@@ -1,5 +1,7 @@
 # Strings and regular expressions
 
+<!-- TODO review this -->
+
 ## What is a string?
 
 - A **string** is a sequence of characters, such as a name, a sentence, or a number entered by the user
@@ -40,19 +42,6 @@ Ada Lovelace
 Year: 1843
 ```
 
-- Parentheses can make it clear which calculations should happen before concatenation
-
-```java
-int apples = 3;
-int oranges = 2;
-
-System.out.println("Fruit count: " + (apples + oranges));
-```
-
-```text
-Fruit count: 5
-```
-
 ## Comparing strings
 
 - Use the `equals` method to check whether two strings contain the same characters
@@ -71,12 +60,9 @@ if (answer.equalsIgnoreCase("YES")) {
 }
 ```
 
-- Call `equals` on a known string value when comparing user input. This avoids an error if the variable being checked is `null`, a value we will discuss later
-
-```java
-if ("yes".equals(answer)) {
-    System.out.println("Continuing");
-}
+```text
+Continuing
+The answer is yes
 ```
 
 ## Getting information from a string
@@ -84,6 +70,7 @@ if ("yes".equals(answer)) {
 - The `length` method returns the number of characters in a string
 - Characters are indexed starting from `0`, so the first character is at index `0` and the last is at index `length() - 1`
 - The `charAt` method returns the character at the given index
+- An index must be within the string. For example, `word.charAt(4)` causes an error because the valid indexes of `"Java"` are `0` through `3`
 
 ```java
 String word = "Java";
@@ -99,20 +86,9 @@ J
 a
 ```
 
-- An index must be within the string. For example, `word.charAt(4)` causes an error because the valid indexes of `"Java"` are `0` through `3`
-- A `for` loop can visit each character in a string
-
-```java
-String word = "Java";
-
-for (int i = 0; i < word.length(); i++) {
-    System.out.println(word.charAt(i));
-}
-```
-
 ## Changing and taking parts of a string
 
-- Strings in Java are **immutable**: their contents cannot be changed after the string is created
+- In Java, string contents cannot be changed after the string is created
 - Methods such as `toUpperCase`, `toLowerCase`, and `trim` return a new string. To keep the result, assign it to a variable
 - `trim` removes whitespace at the beginning and end of a string; it does not remove spaces between words
 
