@@ -20,11 +20,11 @@ Create an array containing numbers 2, 9, 5, 1, 7 and 4. Using a loop (no hardcod
 
 ## Warm-up exercise 2
 
-Create an `ArrayList` containing the words "milk", "chips", "soda" and "hot dogs". Using a loop (no hardcoded solutions), find and print the longest word on the list.
+Create an `ArrayList` containing the words "milk", "chips", "soda" and "hot dogs". Using a loop (no hardcoded solutions), print the total number of characters in the words.
 
 ## Warm-up exercise 3
 
-Ask the user to enter an integer until they enter an empty string. Add the integers to an `ArrayList`. After the empty string is entered, print the even integers on the list.
+Ask the user to enter an integer until they enter an empty string. Add the integers to an `ArrayList`. After the empty string is entered, print the even integers in the list.
 
 Example:
 
@@ -58,7 +58,7 @@ Even integers:
 
 ## Warm-up exercise 4
 
-Ask the user to enter a word until the enter a empty string. Add the words to an `ArrayList`. After the empty string is entered, ask user to enter a word to search from the list. If the word is on the list, print "The word X is on the list", otherwise print "The word X is not on the list".
+Ask the user to enter a word until they enter an empty string. Add the words to an `ArrayList`. After the empty string is entered, ask the user to enter a word to search for in the list. If the word is on the list, print "The word X is on the list", otherwise, print "The word X is not on the list".
 
 Example:
 

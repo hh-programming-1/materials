@@ -36,14 +36,12 @@ public class WarmUp2 {
         words.add("soda");
         words.add("hot dogs");
 
-        String longest = words.get(0);
+        int characters = 0;
         for (String word : words) {
-            if (word.length() > longest.length()) {
-                longest = word;
-            }
+            characters += word.length();
         }
 
-        System.out.println("Longest word: " + longest);
+        System.out.println("Total characters: " + characters);
     }
 }
 ```
