@@ -157,15 +157,15 @@ Apples
 
 ## Lists
 
-- Similarly as arrays, `ArrayList` allows storing multiple values
-- In contrast to an array, the size of an `ArrayList` is **not fixed** and it will automatically grow in size while elements are added
-- `ArrayList` offers various **methods**, including ones for adding values to the list, removing values from it, and also for the retrieval of a value from a specific place in the list
-- In general, `ArrayList` should preferred over an array when we need to store multiple values, but don't know the number of elements we are storing
+- Similarly as arrays, **list** allows storing multiple values
+- In contrast to an array, the size of an list is **not fixed** and it will automatically grow in size while elements are added
+- List offers various **methods**, including ones for adding values to the list, removing values from it, and also for the retrieval of a value from a specific place in the list
+- In general, list should preferred over an array when we need to store multiple values, but don't know the number of elements we are storing
 
 ## Creating a list
 
 $$
-\underbrace{\texttt{ArrayList\<String\>}}_{\text{list type}}
+\underbrace{\texttt{List\<String\>}}_{\text{list type}}
 \quad
 \underbrace{\texttt{names}}_{\text{variable name}}
 \quad
@@ -174,8 +174,9 @@ $$
 \underbrace{\texttt{new ArrayList\<\>()}}_{\text{create an empty list}}
 $$
 
-- For an `ArrayList` to be used, it first needs be imported into the program. This is achieved by including the command `import java.util.ArrayList;` at the top of the program
-- Creating a new list is done with the command `ArrayList<Type> list = new ArrayList<>()`, where `Type` is the type of the values to be stored in the list (e.g. `String`)
+- `ArrayList` is a common list implementation
+- To initialize a `ArrayList`, we need to first import it into the program. This is achieved by including the command `import java.util.ArrayList;` at the top of the program
+- Creating a new list is done with the command `List<Type> list = new ArrayList<>()`, where `Type` is the type of the values to be stored in the list (e.g. `String`)
 - All the elements stored in a given list are of the same type
 
 ```java
@@ -185,45 +186,51 @@ import java.util.ArrayList;
 public class ListExample {
     public static void main(String[] args) {
         // Create a names list, which doesn't have any elements yet
-        ArrayList<String> names = new ArrayList<>();
+        List<String> names = new ArrayList<>();
         // Create a seasons list with predefined elements
-        ArrayList<String> seasons = List.of("Winter", "Spring", "Summer", "Autumn");
+        List<String> seasons = List.of("Winter", "Spring", "Summer", "Autumn");
     }
 }
 ```
 
+## `List` and `ArrayList`
+
+- As in the previous example, the variable `names` is declared with the type `List<String>` and initialized with a new `ArrayList` object
+- `List` is an interface that defines the operations available for a list, such as adding, removing, and retrieving elements
+- `new ArrayList<>()` creates a new `ArrayList` object, which is one implementation of the `List` interface. Other implementations, such as `LinkedList`, are also available
+
 ## Defining the type of elements that a list contains
 
 - When defining the type of values that a list can include, the first letter of the element type has to be capitalized
-- A list that includes int-type variables has to be defined in the form `ArrayList<Integer>` and a list that includes double-type variables is defined in the form `ArrayList<Double>`
-- The reason for this has to do with how the `ArrayList` is implemented. Variables in Java can be divided into two categories: **value type (primitive)** and **reference type variables**
+- A list that includes int-type variables has to be defined in the form `List<Integer>` and a list that includes double-type variables is defined in the form `List<Double>`
+- The reason for this has to do with how list is implemented. Variables in Java can be divided into two categories: **value type (primitive)** and **reference type variables**
 - Value-type variables such as `int` or `double` hold their actual values
 - Reference-type variables such as `ArrayList`, in contrast, contain a reference to the location that contains the value(s) relating to that variable
 
 ```java
 // Create a names list of strings and add a string element to the list
-ArrayList<String> names = new ArrayList<>();
+List<String> names = new ArrayList<>();
 names.add("Kalle");
 
 // Create a grades list of integers and add a integer element to the list
-ArrayList<Integer> grades = new ArrayList<>();
+List<Integer> grades = new ArrayList<>();
 grades.add(5);
 
 // Create a prices list of doubles and add a double element to the list
-ArrayList<Double> prices = new ArrayList<>();
+List<Double> prices = new ArrayList<>();
 prices.add(1.5);
 ```
 
 ## Accessing the list elements
 
-- Adding elements to a list is done with the list method `add`, which takes the value to be added as a parameter
+- Adding elements to the beginning of a list is done with the list method `add`, which takes the value to be added as a parameter
 - Similarly as with arrays, list elements are stored to a specific index, **first index being zero**
 - To retrieve a value from a certain index, we use the list method `get`, which is given the index of retrieval as a parameter
 - If we try to retrieve information from a index that does not exist on the list, we will get an `IndexOutOfBoundsException` error
 
 ```java
 // Create the word list for storing strings
-ArrayList<String> wordList = new ArrayList<>();
+List<String> wordList = new ArrayList<>();
 
 // Add two values to the word list
 wordList.add("First"); // "First" is stored to index 0
@@ -245,7 +252,7 @@ Second
 - We can go through the elements of a list the same way as an array using a `for` loop
 
 ```java
-ArrayList<String> wordList = new ArrayList<>();
+List<String> wordList = new ArrayList<>();
 
 wordList.add("First");
 wordList.add("Second");
@@ -273,7 +280,7 @@ Third
 - In the following example, `grades` is the list we are iterating over. During each iteration, the `grade` variable is assigned the next element in the list
 
 ```java
-ArrayList<Integer> grades = new ArrayList<>();
+List<Integer> grades = new ArrayList<>();
 grades.add(5);
 grades.add(3);
 grades.add(2);
@@ -296,7 +303,7 @@ for (Integer grade : grades) {
 - Lists have many useful methods for manipulating the contents of the list and inspecting its contents
 
 ```java
-ArrayList<String> weekdays = List.of("Monday", "Tuesday", "Wednesday");
+List<String> weekdays = List.of("Monday", "Tuesday", "Wednesday");
 
 weekdays.add("Thursday"); 
 weekdays.remove(0); // remove list element in index 0
@@ -329,7 +336,7 @@ public class TotalPrice {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         // Initialize a list of doubles, note the Double as the element type
-        ArrayList<Double> prices = new ArrayList<>();
+        List<Double> prices = new ArrayList<>();
 
         // Read user input in a while loop
         // We use a while loop, because we don't know how many user inputs there will be
