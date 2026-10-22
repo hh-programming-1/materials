@@ -86,7 +86,7 @@ J
 a
 ```
 
-## Changing and taking parts of a string
+## Changing a string
 
 - In Java, string contents cannot be changed after the string is created
 - Methods such as `toUpperCase`, `toLowerCase`, and `trim` return a new string. To keep the result, assign it to a variable
@@ -95,27 +95,34 @@ a
 ```java
 String name = "  Ada Lovelace  ";
 
+// trim removes whitespace at the beginning and end of a string
 String trimmedName = name.trim();
+// toUpperCase turns all characters to upper case, e.g. hello => HELLO
 String upperCaseName = trimmedName.toUpperCase();
+// toLowerCase turns all characters to lower case, e.g. HeLlo => hello
+String lowerCaseName = trimmedName.toLowerCase();
 
 System.out.println(">" + trimmedName + "<");
 System.out.println(upperCaseName);
-System.out.println(name);
+System.out.println(lowerCaseName);
 ```
 
 ```text
 >Ada Lovelace<
 ADA LOVELACE
-  Ada Lovelace
+ada lovelace
 ```
+
+## Taking parts of a string
 
 - The `substring` method returns part of a string. The starting index is included and the ending index is excluded
 - `substring(start)` takes characters from `start` to the end of the string
 
 ```java
 String word = "Programming";
-
+// Takes characters from index 0 until index 6 (excluding the end index)
 System.out.println(word.substring(0, 7));
+// Takes characters from index 7 until the end of the string
 System.out.println(word.substring(7));
 ```
 
@@ -126,16 +133,15 @@ ming
 
 ## Searching for text
 
-- Use `contains` to check whether a string includes a sequence of characters
-- Use `startsWith` and `endsWith` to check the beginning or end of a string
-- These methods are case-sensitive: `"Java"` does not contain `"java"`
+- The `contains` method checks whether a string includes a sequence of characters
+- The `startsWith` and `endsWith` methods check the beginning or end of a string
 
 ```java
 String fileName = "report.pdf";
 
 System.out.println(fileName.endsWith(".pdf"));
 System.out.println(fileName.contains("port"));
-System.out.println(fileName.startsWith("Report"));
+System.out.println(fileName.startsWith("exam"));
 ```
 
 ```text
@@ -147,48 +153,56 @@ false
 ## What is a regular expression?
 
 - A **regular expression**, often shortened to **regex**, is a pattern that describes text
-- A regex can be used to check whether text follows a format, find text within a larger string, or replace matching text
-- For example, `[0-9]{5}` describes exactly five digits in a row
-- A regex is not Java code. Java passes it as a string to methods such as `matches` or `replaceAll`
+- A regex can be used to, for example, check whether a strings follows a specified format
+- Here are some examples of values and their regular expression patterns
+
+| Value                                               | Pattern description                                                             | Regex                      |
+| --------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------- |
+| Postal code, e.g. `00610`                           | Exactly five digits                                                             | `\d{5}`                    |
+| Date, e.g. `22.10.2026`                             | Two digits, a period, two digits, a period, and four digits                     | `\d{2}\.\d{2}\.\d{4}`      |
+| Haaga-Helia email, e.g. `john.smith@haaga-helia.fi` | One or more word characters, dot, one or more word characters, @haaga-helia.fi  | `\w+\.\w+@haaga-helia\.fi` |
+| Social security number, e.g. `010101-123N`          | Six digits, a century marker (A, + or -), three digits, and a control character | `\d{6}[A+-]\d{3}[0-9A-z]`  |
 
 ## Common regular expression symbols
 
-| Pattern | Meaning | Example |
-| --- | --- | --- |
-| `abc` | The exact characters `abc` | `abc` matches `abc` |
-| `[abc]` | One character: `a`, `b`, or `c` | `[abc]` matches `b` |
-| `[a-z]` | One lowercase letter from `a` to `z` | `[a-z]` matches `m` |
-| `[A-Z]` | One uppercase letter from `A` to `Z` | `[A-Z]` matches `M` |
-| `[0-9]` | One digit from `0` to `9` | `[0-9]` matches `7` |
-| `\d` | One digit | `\d` matches `7` |
-| `\s` | One whitespace character, such as a space | `\s` matches a space |
-| `.` | Any one character | `c.t` matches `cat` |
-| `*` | Zero or more of the previous item | `ab*` matches `a`, `ab`, or `abb` |
-| `+` | One or more of the previous item | `ab+` matches `ab` or `abb`, but not `a` |
-| `?` | Zero or one of the previous item | `colou?r` matches `color` or `colour` |
-| `{n}` | Exactly `n` of the previous item | `[0-9]{5}` matches five digits |
-| `{n,m}` | Between `n` and `m` of the previous item | `[0-9]{2,4}` matches two to four digits |
-| `^` | The beginning of the text | `^A` requires the text to start with `A` |
-| `$` | The end of the text | `z$` requires the text to end with `z` |
+| Pattern | Meaning                                   | Example                                  |
+| ------- | ----------------------------------------- | ---------------------------------------- |
+| `abc`   | The exact characters `abc`                | `abc` matches `abc`                      |
+| `[abc]` | One character: `a`, `b`, or `c`           | `[abc]` matches `b`                      |
+| `[a-z]` | One lowercase letter from `a` to `z`      | `[a-z]` matches `m`                      |
+| `[A-Z]` | One uppercase letter from `A` to `Z`      | `[A-Z]` matches `M`                      |
+| `[0-9]` | One digit from `0` to `9`                 | `[0-9]` matches `7`                      |
+| `\.`    | . character                               | `\.` matches `.`                         |
+| `\d`    | One digit                                 | `\d` matches `7`                         |
+| `\s`    | One whitespace character, such as a space | `\s` matches a space                     |
+| `.`     | Any one character                         | `c.t` matches `cat`                      |
+| `*`     | Zero or more of the previous item         | `ab*` matches `a`, `ab`, or `abb`        |
+| `+`     | One or more of the previous item          | `ab+` matches `ab` or `abb`, but not `a` |
+| `?`     | Zero or one of the previous item          | `colou?r` matches `color` or `colour`    |
+| `{n}`   | Exactly `n` of the previous item          | `[0-9]{5}` matches five digits           |
+| `{n,m}` | Between `n` and `m` of the previous item  | `[0-9]{2,4}` matches two to four digits  |
 
 - Square brackets describe a choice of one character. For example, `[aeiou]` matches one lowercase vowel
 - Parentheses group parts of a pattern. For example, `(ab)+` matches `ab`, `abab`, or more repetitions of `ab`
-- A backslash gives a character a special meaning in regex. In a Java string, backslashes must also be escaped, so write `\\d` in Java source to pass `\d` to the regex engine
-- To match a character that normally has a special meaning, such as a dot, put a backslash before it in the regex. In Java source, use `"\\."` to match a literal dot
+- To match a character that normally has a special meaning, such as a dot, we put a backslash before it in the regex. For example, we use `\.` to match a literal dot
 
 ## Checking the whole string with `matches`
 
 - The `String.matches` method returns `true` if the **whole string** matches the regex
-- It does not just check whether some part of the string matches
-- For example, `[0-9]{5}` accepts exactly five digits and rejects text with extra characters
+- It does not just check whether some part of the string matches. For example, `[0-9]{5}` accepts exactly five digits and rejects text with extra characters
+- When the backslash `\` is in the pattern, a double backslash `\\` needs to be used in the regex string
 
 ```java
 String postalCode = "00100";
+String email = "bill.gates@microsoft.com";
 
 if (postalCode.matches("[0-9]{5}")) {
     System.out.println("The postal code has five digits");
-} else {
-    System.out.println("The postal code must contain exactly five digits");
+}
+
+// Note that double backslash \\ is required with, e.g. \w pattern!
+if (email.matches("\\w+\\.\\w+@haaga-helia\\.fi")) {
+    System.out.println("The email matches Haaga-Helia's format");
 }
 ```
 
@@ -196,89 +210,33 @@ if (postalCode.matches("[0-9]{5}")) {
 The postal code has five digits
 ```
 
-- In this example, the pattern `[0-9]{5}` means five characters, each of which is a digit from `0` to `9`
-- `"12a45"` and `"123456"` do not match because they do not contain exactly five digits
-- A format check only checks the text's shape. It does not prove that a postal code or other value is real
+## 💡 String and regex example: validating the date format
 
-## Finding a match inside text
-
-- `matches` checks the entire string. To search for a matching part inside a larger string, use `Pattern` and `Matcher`
-- `Matcher.find` returns `true` when it finds a matching part. Calling it again searches for the next match
-
-```java
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-String sentence = "Order numbers: 123 and 456.";
-Pattern pattern = Pattern.compile("[0-9]+");
-Matcher matcher = pattern.matcher(sentence);
-
-while (matcher.find()) {
-    System.out.println(matcher.group());
-}
-```
-
-```text
-123
-456
-```
-
-- `Pattern.compile` creates a reusable regex pattern
-- `matcher.group()` returns the text found by the most recent successful `find` call
-
-## Replacing and splitting text with regex
-
-- `replaceAll` replaces every part of a string that matches a regex. Like other string methods, it returns a new string
-- `split` separates a string wherever the regex matches and returns an array of strings
-
-```java
-String sentence = "Java   is fun";
-String oneSpace = sentence.replaceAll("\\s+", " ");
-String[] words = oneSpace.split(" ");
-
-System.out.println(oneSpace);
-System.out.println(words[0]);
-System.out.println(words[1]);
-System.out.println(words[2]);
-```
-
-```text
-Java is fun
-Java
-is
-fun
-```
-
-- In this example, `\\s+` means one or more whitespace characters. The doubled backslash is required because this pattern is written inside a Java string
-- `split` also uses a regex, so characters with special regex meanings may need to be escaped
-
-## 💡 String and regex example: validating a student number
-
-> Write a program that checks whether a student number consists of exactly six digits.
+> Write a program that checks whether the given date is in the ISO date format YYYY-MM-DD.
 
 ```java
 import java.util.Scanner;
 
-public class StudentNumberCheck {
+public class DateFormatCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter your student number: ");
+        System.out.print("Enter the date in format YYYY-MM-DD: ");
         String studentNumber = input.nextLine();
 
-        if (studentNumber.matches("[0-9]{6}")) {
-            System.out.println("The student number format is valid");
+        if (studentNumber.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
+            System.out.println("The date format is valid");
         } else {
-            System.out.println("The student number must contain exactly six digits");
+            System.out.println("The date is not in format YYYY-MM-DD");
         }
     }
 }
 ```
 
 ```text
-Enter your student number: 123456
-The student number format is valid
+Enter your student number: 2026-10-22
+The date format is valid
 ```
 
-- Keep user input as a string when checking its format. If the student number were converted to an integer, leading zeroes would be lost
-- This check only verifies that the input has six digits; it does not verify that the number belongs to a real student
+> [!NOTE]
+> This regex checks that the date format is correct, but doesn't check that date itself is real. For example, the date `"2026-99-99"` would pass this check. Sometimes additional check are required on top of the pattern check.
