@@ -1,74 +1,76 @@
 # Dates
 
-<!-- TODO review this -->
-
 ## Dates and times in Java
 
-- Java provides the `java.time` package for working with dates and times
-- The main classes in this material are:
-  - `LocalDate` for a calendar date, such as 2026-10-21
-  - `LocalTime` for a time of day, such as 09:30
-  - `LocalDateTime` for a date and time together, such as 2026-10-21T09:30
-- These classes do not include a time zone. They are useful for dates and times as people use them locally, but not for identifying a precise moment across different time zones
-- Date and time values are not strings. Java stores them as date/time objects so that they can be compared and calculated correctly
+- Dates and times are often needed in applications, for example an order's delivery date, an invoice's due date, the moment a message was saved, etc.
+- Java has classes for handling time in the package `java.time`
+  - `LocalDate`: represents a **date** with day, month, and year
+  - `LocalTime`: represents a **time of day** with hour, minute and seconds
+  - `LocalDateTime`: represents a **date and the time of day**
+- Objects of these classes can be used, for example, to represent a desired moment in time, compare them to each other, and add or subtract time
+- Like strings, these classes are immutable and their value cannot change after initialization
+- Other classes used for handling dates and times can be found in the packages `java.time.format` and `java.time.temporal`
 
-## Getting the current date and time
+## Creating date and time values
 
-- The `now` method returns the current date or time from the computer's clock
-- Import each class from `java.time` before using it
+- Here are some examples of creating date and time values using the `LocalDate` and `LocalTime` classes
 
 ```java
+// Import the classes to use them
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-LocalDate today = LocalDate.now();
-LocalTime currentTime = LocalTime.now();
-LocalDateTime now = LocalDateTime.now();
+import java.util.ArrayList;
 
-System.out.println(today);
-System.out.println(currentTime);
-System.out.println(now);
+public class DateAndTimeExample {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now(); // today's date
+        LocalTime timeNow = LocalTime.now(); // current time of day
+        LocalDate birthday = LocalDate.parse("1993-01-19"); // from a YYYY-MM-DD string
+        LocalDate christmasEve = LocalDate.of(2027, 12, 24); // from (year, month, day) parameters
+        LocalTime afternoonTeaTime = LocalTime.of(17, 0); // note: hours are 0-23
+
+        System.out.println("Birthday: " + birthday);
+        System.out.println("Year of birth:  " + birthday.getYear());
+        System.out.println("Tea time is at: " + afternoonTeaTime);
+
+    }
+}
 ```
-
-- The exact output depends on when the program runs. The default output uses the ISO format: date as `year-month-day` and time using a 24-hour clock
 
 ```text
-2026-10-21
-09:30:15.123
-2026-10-21T09:30:15.123
+Birthday: 1993-01-19
+Year of birth: 1993
+Tea time is at: 17:00
 ```
 
-## Creating date and time values
+## Formatting date and time values
 
-- Use `of` when you want to create a date or time with specific values
-- `LocalDate.of` takes the year, month, and day
-- `LocalTime.of` takes the hour and minute, and can also take seconds
-- The month is a number from `1` to `12`, and the hour uses the 24-hour clock
+- The string presentation of the date and time formats follow the standard formats, e.g. `1993-01-19`
+- We can use the `DateTimeFormatter.ofPattern` to create the format we want, e.g. `1.19.1993`
 
 ```java
-import java.time.LocalDate;
-import java.time.LocalTime;
+Scanner input = new Scanner(System.in);
+// Create a format for day.month.year, e.g. 1.19.1993
+// d = day of year, M = month of year, yyyy = year
+DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("d.M.yyyy");
+System.out.print("Enter a date in format day.month.year: ");
+String dateString = input.nextLine();
+// LocalDate.parse method will now use our format
+LocalDate date = LocalDate.parse(dateString, dateFormat);
 
-LocalDate birthday = LocalDate.of(2000, 5, 20);
-LocalTime meetingTime = LocalTime.of(14, 30);
-LocalTime lunchTime = LocalTime.of(12, 0, 0);
-
-System.out.println(birthday);
-System.out.println(meetingTime);
-System.out.println(lunchTime);
+System.out.println("Standard format: " + date);
+System.out.println("Finnish format: " + dateFormat.format(date));
 ```
 
-```text
-2000-05-20
-14:30
-12:00
+```
+Enter a date in format day.month.year: 19.1.1993
+Standard format: 19-01-1993
+Finnish format: 19.1.1993
 ```
 
-- Java checks that values form a valid date or time. For example, `LocalDate.of(2025, 2, 30)` is invalid and causes a `DateTimeException`
-- Leap years and the different number of days in each month are handled by the date classes
-
-## Getting parts of a date or time
+## Getting parts of date and time
 
 - Methods such as `getYear`, `getMonthValue`, and `getDayOfMonth` return parts of a `LocalDate`
 - Methods such as `getHour` and `getMinute` return parts of a `LocalTime`
@@ -84,7 +86,7 @@ System.out.println(time.getHour());
 System.out.println(time.getMinute());
 ```
 
-```text
+```
 2026
 10
 21
@@ -92,29 +94,11 @@ System.out.println(time.getMinute());
 30
 ```
 
-- `getDayOfWeek` returns a `DayOfWeek` value, such as `MONDAY` or `SATURDAY`
+## Comparisons and calculations
 
-```java
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-
-LocalDate date = LocalDate.of(2026, 10, 21);
-DayOfWeek day = date.getDayOfWeek();
-
-System.out.println(day);
-System.out.println(day == DayOfWeek.WEDNESDAY);
-```
-
-```text
-WEDNESDAY
-true
-```
-
-## Comparing dates and times
-
-- Use `isBefore` and `isAfter` to check which date or time comes first
-- Use `equals` to check whether two date/time objects represent the same value
-- Do not use `==` to compare date/time values
+- `equals` method is to check whether two date or time objects represent the same value
+- `isBefore` and `isAfter` methods are used to check which date or time comes first
+- Methods like `plusDays` can be used to add or subtract parts (hour, day, month, ...). The result is a **new time-class object** that contains a valid moment.
 
 ```java
 import java.time.LocalDate;
@@ -123,197 +107,50 @@ LocalDate today = LocalDate.of(2026, 10, 21);
 LocalDate deadline = LocalDate.of(2026, 11, 1);
 
 if (today.isBefore(deadline)) {
-    System.out.println("There is still time before the deadline");
+    System.out.println("There is still time before the deadline!");
 }
 
-System.out.println(today.isAfter(deadline));
-System.out.println(today.equals(deadline));
+LocalDate inSevenDays = today.plusDays(7);
+
+System.out.println("In seven days the date is: " + inSevenDays)
 ```
 
 ```text
-There is still time before the deadline
-false
-false
+There is still time before the deadline!
+In seven days the date is: 2026-10-28
 ```
 
-- The same comparison methods are available on `LocalTime` and `LocalDateTime`
+## 💡 dates example: checking for holiday
 
-## Adding and subtracting time
-
-- Methods such as `plusDays`, `minusMonths`, and `plusHours` calculate a new date or time
-- Date and time objects are **immutable**: these methods do not change the original value. They return a new value, which you can store in a variable
-- Java handles changes across month ends and leap years
+> Write a program that asks the user when their holiday begins. Then, it should check whether their 28 day holiday has ended or not.
 
 ```java
-import java.time.LocalDate;
-
-LocalDate startDate = LocalDate.of(2024, 2, 28);
-LocalDate nextDay = startDate.plusDays(1);
-LocalDate followingDay = nextDay.plusDays(1);
-LocalDate nextMonth = startDate.plusMonths(1);
-
-System.out.println(startDate);
-System.out.println(nextDay);
-System.out.println(followingDay);
-System.out.println(nextMonth);
-```
-
-```text
-2024-02-28
-2024-02-29
-2024-03-01
-2024-03-28
-```
-
-- If the target month has fewer days, Java adjusts the result to the last valid day of that month. For example, adding one month to January 31 results in the last day of February
-- `LocalTime` supports operations such as `plusMinutes` and `minusHours`. If the result passes midnight, the time wraps around to the next or previous day; `LocalTime` itself does not store that day change
-
-```java
-import java.time.LocalTime;
-
-LocalTime startTime = LocalTime.of(23, 50);
-LocalTime later = startTime.plusMinutes(20);
-
-System.out.println(later);
-```
-
-```text
-00:10
-```
-
-## Working with a date and a time together
-
-- Use `LocalDateTime` when both the date and the time are needed
-- You can create one directly with `of`, or combine an existing `LocalDate` and `LocalTime`
-- The `toLocalDate` and `toLocalTime` methods return the date and time parts
-
-```java
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
-LocalDate date = LocalDate.of(2026, 10, 21);
-LocalTime time = LocalTime.of(9, 30);
-LocalDateTime appointment = LocalDateTime.of(date, time);
-
-System.out.println(appointment);
-System.out.println(appointment.toLocalDate());
-System.out.println(appointment.toLocalTime());
-```
-
-```text
-2026-10-21T09:30
-2026-10-21
-09:30
-```
-
-- `LocalDateTime` supports comparisons and calculations such as `isBefore`, `plusDays`, and `minusHours`
-- Adding hours to a `LocalDateTime` can change its date when the calculation crosses midnight
-
-## Reading dates and times from text
-
-- User input read with `Scanner.nextLine()` is a string
-- Use `parse` to convert text in the standard ISO format into a date or time object
-- Standard formats are `yyyy-MM-dd` for a date and `HH:mm` for a time
-
-```java
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Scanner;
-
-Scanner input = new Scanner(System.in);
-
-System.out.print("Enter a date (yyyy-MM-dd): ");
-LocalDate date = LocalDate.parse(input.nextLine());
-
-System.out.print("Enter a time (HH:mm): ");
-LocalTime time = LocalTime.parse(input.nextLine());
-
-System.out.println("Date: " + date);
-System.out.println("Time: " + time);
-```
-
-```text
-Enter a date (yyyy-MM-dd): 2026-10-21
-Enter a time (HH:mm): 09:30
-Date: 2026-10-21
-Time: 09:30
-```
-
-- The text must use a valid format and represent a valid date or time. Invalid input causes a `DateTimeParseException`
-- We will learn how to handle exceptions in a later topic
-
-## Formatting dates and times
-
-- The default format is useful for programs, but a different format may be easier for people to read
-- Use a `DateTimeFormatter` to format a date or time as text
-- In a format pattern, `dd` means day, `MM` means month, `yyyy` means year, `HH` means hour using a 24-hour clock, and `mm` means minutes
-- Uppercase `MM` is for months; lowercase `mm` is for minutes
-
-```java
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
-DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
-DateTimeFormatter appointmentFormat =
-        DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-
-LocalDate date = LocalDate.of(2026, 10, 21);
-LocalTime time = LocalTime.of(9, 30);
-LocalDateTime appointment = LocalDateTime.of(date, time);
-
-System.out.println(date.format(dateFormat));
-System.out.println(time.format(timeFormat));
-System.out.println(appointment.format(appointmentFormat));
-```
-
-```text
-21.10.2026
-09:30
-21.10.2026 09:30
-```
-
-- To parse text in a custom format, create a formatter and pass it to `parse`
-
-```java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-LocalDate date = LocalDate.parse("21.10.2026", dateFormat);
-
-System.out.println(date);
-```
-
-```text
-2026-10-21
-```
-
-## 💡 Date example: finding Midsummer Day
-
-> Midsummer Day is the Saturday between June 20 and June 26. Find the date of Midsummer Day in a given year.
-
-```java
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-int year = 2026;
+public class HolidayCheck {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-for (int day = 20; day <= 26; day++) {
-    LocalDate date = LocalDate.of(year, 6, day);
+        System.out.print("Enter when your holiday starts (YYYY-MM-DD): ");
+        String dateString = input.nextLine();
+        LocalDate start = LocalDate.parse(dateString);
+        LocalDate end = start.plusDays(28);
+        LocalDate today = LocalDate.now();
 
-    if (date.getDayOfWeek() == DayOfWeek.SATURDAY) {
-        System.out.println("Midsummer Day is " + date);
+        System.out.println("Your holiday ends on " + end);
+
+        if (today.isAfter(end)) {
+            System.out.println("Your holiday has ended");
+        } else {
+            System.out.println("Your holiday is still going or has not started yet");
+        }
     }
 }
 ```
 
 ```text
-Midsummer Day is 2026-06-20
+Enter when your holiday starts (YYYY-MM-DD): 2026-06-01
+Your holiday ends on 2026-06-29
+Your holiday has ended
 ```
-
-- The loop checks each possible date, creates a `LocalDate`, and tests its day of the week
-- The `DayOfWeek` values are constants, so comparing the result with `==` is appropriate here

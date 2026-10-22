@@ -88,7 +88,7 @@ a
 
 ## Changing a string
 
-- In Java, string contents cannot be changed after the string is created
+- In Java, string are **immutable**, meaning that their contents cannot be changed after the string is created
 - Methods such as `toUpperCase`, `toLowerCase`, and `trim` return a new string. To keep the result, assign it to a variable
 - `trim` removes whitespace at the beginning and end of a string; it does not remove spaces between words
 
@@ -234,7 +234,7 @@ public class DateFormatCheck {
 ```
 
 ```text
-Enter your student number: 2026-10-22
+Enter the date in format YYYY-MM-DD
 The date format is valid
 ```
 
