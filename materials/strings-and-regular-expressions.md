@@ -222,9 +222,9 @@ public class DateFormatCheck {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter the date in format YYYY-MM-DD: ");
-        String studentNumber = input.nextLine();
+        String date = input.nextLine();
 
-        if (studentNumber.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
+        if (date.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
             System.out.println("The date format is valid");
         } else {
             System.out.println("The date is not in format YYYY-MM-DD");
@@ -234,7 +234,7 @@ public class DateFormatCheck {
 ```
 
 ```text
-Enter the date in format YYYY-MM-DD
+Enter the date in format YYYY-MM-DD: 2026-10-23
 The date format is valid
 ```
 
