@@ -1,7 +1,5 @@
 # Strings and regular expressions
 
-<!-- TODO review this -->
-
 ## What is a string?
 
 - A **string** is a sequence of characters, such as a name, a sentence, or a number entered by the user
@@ -184,7 +182,7 @@ false
 
 - Square brackets describe a choice of one character. For example, `[aeiou]` matches one lowercase vowel
 - Parentheses group parts of a pattern. For example, `(ab)+` matches `ab`, `abab`, or more repetitions of `ab`
-- To match a character that normally has a special meaning, such as a dot, we put a backslash before it in the regex. For example, we use `\.` to match a literal dot
+- To match a character that normally has a special meaning, such as a `.` or `+`, we put a backslash before it in the regex. For example, we use `\.` to match a dot and `\+` to match a plus symbol
 
 ## Checking the whole string with `matches`
 

@@ -215,7 +215,7 @@ It is cool
 
 ## 💡 Conditional statement example: comission calculation
 
-> Write a program that asks for the selling price of an apartment and calculates the real estate agent's commission for the sale. The commission is 3.44% of the selling price, but at least €2,214."
+> Write a program that asks for the selling price of an apartment and calculates the real estate agent's commission for the sale. The commission is 3.44% of the selling price, but at least €2,214.
 
 ```java
 public static void main(String[] args) {
