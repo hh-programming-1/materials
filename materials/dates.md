@@ -1,8 +1,8 @@
-# Dates
+# Date and time
 
-## Dates and times in Java
+## Date and time values in Java
 
-- Dates and times are often needed in applications, for example an order's delivery date, an invoice's due date, the moment a message was saved, etc.
+- Dates and times are often needed in applications, for example an order's delivery date, an invoice's due date, the moment of time a message was saved, etc.
 - Java has classes for handling time in the package `java.time`
   - `LocalDate`: represents a **date** with day, month, and year
   - `LocalTime`: represents a **time of day** with hour, minute and seconds
