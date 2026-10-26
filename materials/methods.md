@@ -138,7 +138,7 @@ class SalesComission {
             commission = minimumCommission;
         }
 
-        return comission;
+        return commission;
     }
 
     public static String formatSalesComission(double comission) {
