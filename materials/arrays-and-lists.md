@@ -53,7 +53,7 @@ int[] numbers = {1, 2, 3, 4};
 
 ## Accessing the array elements
 
-- An element of an array is referred to by its index. In the example below we create an Array to hold 3 integers, and then assign values to indices 0 and 2. After that we print the values
+- An element of an array is referred to by its index. In the example below we create an array to hold 2 integers, and then assign values to indices 0 and 1. After that we print the values
 - Assigning a value to a specific spot of an array works much like assigning a value in a normal variable, but in the array you must specify the index within `[]` brackets, i.e. to which spot you want to assign the value
 
 ```java
@@ -99,9 +99,8 @@ The array has 4 elements
 
 ## The boundaries of an array
 
-- If the index is pointing outside the array, i.e. the element doesn't exist, we get an `ArrayIndexOutOfBoundsException` error
-- This error tells, that the array doesn't contain the given index
-- You cannot access outside of the array, i.e. index that's less than 0 or greater or equal to the size of the array
+- If the index is pointing outside the array, i.e. the element doesn't exist, we get an `ArrayIndexOutOfBoundsException` error, which crashes the program and ends its execution
+- We cannot access outside of the array, i.e. index that's less than 0 or greater or equal to the size of the array
 
 ```java
 int[] numbers = new int[4];
