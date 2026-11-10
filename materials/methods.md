@@ -192,20 +192,22 @@ public class CalculatorApp {
 - This is called **method overloading**
 
 ```java
-// This version of the greet method doesn't have any parameters
-public static void greet() {
-    System.out.println("Hello!");
-}
+public class Greeting {
+    // This version of the greet method doesn't have any parameters
+    public static void greet() {
+        System.out.println("Hello!");
+    }
 
-// This version of the greet method has a single string parameter
-public static void greet(String name) {
-    System.out.println("Hello, " + name + "!");
-}
+    // This version of the greet method has a single string parameter
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
 
-public static void main(String[] args) {
-    // This will call void greet()
-    String genericGreeting = greet();
-    // This will call void greet(String name)
-    String namedGreeting = greet("Kalle");
+    public static void main(String[] args) {
+        // This will call void greet()
+        String genericGreeting = greet();
+        // This will call void greet(String name)
+        String namedGreeting = greet("Kalle");
+    }
 }
 ```
