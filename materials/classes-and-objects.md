@@ -61,7 +61,7 @@ BankAccount account = new BankAccount();
 LocalDate birthday = LocalDate.parse("1993-01-19");
 ```
 
-## Constructors
+## Constructor
 
 - A **constructor** is a special method that is called automatically when creating an object with the `new` keyword
 - The constructor's purpose is to **initialize the object** by setting initial values for its attributes
