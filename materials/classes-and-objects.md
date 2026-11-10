@@ -6,10 +6,11 @@
 - It defines the **structure** (what data it contains) and **behavior** (what actions it can perform) that objects created from the class will have
 - We can think of a class as a blueprint for a house: the blueprint defines the rooms, doors, and windows, but the actual house is built based on that blueprint
 - In Java, each class is defined in its own file, named by the class name, e.g. `BankAccount.java`
+- An application typically **consists of multiple classes**, each with a specific responsibility. Together, these classes provide the functionality required by the application
 
 ```java
 // This is a class named BackAcount in BankAccount.java file
-// It serves as a blueprint for creating backaccount objects
+// It serves as a blueprint for creating bank account objects
 public class BankAccount {
     // Data (attributes)
     private String owner;
@@ -17,7 +18,7 @@ public class BankAccount {
 
     // Behavior (methods)
     public void printBankAccount() {
-        System.out.println(this.owner + ": " + this.balance + "€");
+        System.out.println("Owner: " + this.owner + ", balance: " + this.balance + "€");
     }
 }
 ```
@@ -30,6 +31,7 @@ public class BankAccount {
 - Multiple objects can be created from the same class, each with different data
 
 ```java
+// Here, the Application class in the Application.java file uses the BankAccount class
 public class Application {
     public static void main(String[] args) {
         // The account variable contains an object created form the BankAccount class
@@ -82,7 +84,7 @@ public class BankAccount {
     }
 
     public void printBankAccount() {
-        System.out.println(this.owner + ": " + this.balance + "€");
+        System.out.println("Owner: " + this.owner + ", balance: " + this.balance + "€");
     }
 }
 ```
@@ -155,7 +157,7 @@ public class BankAccount {
     }
 
     public void printBankAccount() {
-        System.out.println(this.owner + ": " + this.balance + "€");
+        System.out.println("Owner: " + this.owner + ", balance: " + this.balance + "€");
     }
 }
 ```
@@ -310,9 +312,8 @@ public class BankAccount {
 
     public void printBankAccount() {
         // We can call the formatBalance here, because we are in a method of the same class
-        System.out.println(this.owner + ": " + this.formatBalance());
+        System.out.println("Owner: " + this.owner + ", balance: " + this.formatBalance());
     }
-}
 ```
 
 ```java
