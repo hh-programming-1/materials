@@ -5,12 +5,12 @@
 - A **class** is a blueprint or template for creating objects
 - It defines the **structure** (what data it contains) and **behavior** (what actions it can perform) that objects created from the class will have
 - We can think of a class as a blueprint for a house: the blueprint defines the rooms, doors, and windows, but the actual house is built based on that blueprint
-- In Java, every piece of code must be part of a class
+- In Java, each class is defined in its own file, named by the class name, e.g. `BankAccount.java`
 
 ```java
-// This is a class named BackAcount
+// This is a class named BackAcount in BankAccount.java file
 // It serves as a blueprint for creating backaccount objects
-public class Person {
+public class BankAccount {
     // Data (attributes)
     private String owner;
     private double balance;
@@ -30,15 +30,19 @@ public class Person {
 - Multiple objects can be created from the same class, each with different data
 
 ```java
-// The account variable contains an object created form the BankAccount class
-BankAccount account = new BankAccount();
+public class Application {
+    public static void main(String[] args) {
+        // The account variable contains an object created form the BankAccount class
+        BankAccount account = new BankAccount();
+    }
+}
 ```
 
 ## Creating objects - the `new` keyword
 
 - To create an object from a class, we use the `new` keyword
 - The `new` keyword **allocates memory** for the new object and calls a **constructor** (a special method that initializes the object)
-- After creation, the object is assigned to a variable, which stores a reference to that object
+- After cration, the object is assigned to a variable, which stores a reference to that object
 
 $$
 \underbrace{\texttt{BankAccount}}_{\text{class type}}
