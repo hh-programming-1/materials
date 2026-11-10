@@ -16,7 +16,7 @@ public class Person {
     private double balance;
 
     // Behavior (methods)
-    public double printBankAccount() {
+    public void printBankAccount() {
         System.out.println(this.owner + ": " + this.balance + "€");
     }
 }
@@ -77,7 +77,7 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public double printBankAccount() {
+    public void printBankAccount() {
         System.out.println(this.owner + ": " + this.balance + "€");
     }
 }
@@ -85,7 +85,7 @@ public class BankAccount {
 
 ## Constructor example
 
-- When we create an object, we must provide the required parameters:
+- When we create an object, we must provide the required parameters for the constructor
 
 ```java
 // Create a BankAccount object with owner "Alice" and balance 5000
@@ -101,6 +101,17 @@ System.out.println(bob.printBankAccount());
 ```
 Alice: 5000.0€
 Bob: 90.0€
+```
+
+```mermaid
+graph LR
+    A["alice"] -->|reference| B["<b>BankAccount</b><br/>owner: #quot;Alice#quot;<br/>balance: 5000.0"]
+    C["bob"] -->|reference| D["<b>BankAccount</b><br/>owner: #quot;Bob#quot;<br/>balance: 90.0"]
+
+    style A fill:#e1f5ff,color:#333
+    style C fill:#e1f5ff,color:#333
+    style B fill:#fff9c4,color:#333
+    style D fill:#fff9c4,color:#333
 ```
 
 ## Methods and accessing attributes
@@ -120,13 +131,18 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    // "Getter" (getting an attribute value) and "setter" (setting an attribute value) methods are common methods for each class
     public double getBalance() {
         // "this" refers to the current object, this.balance is the value of the balance attribute
         return this.balance;
     }
 
-    public void deposit(double amount) {
+    public void setBalance(double balance) {
         // We assign a new value for the balance attribute
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
         this.balance = this.balance + amount;
     }
 
@@ -134,7 +150,7 @@ public class BankAccount {
         this.balance = this.balance - amount;
     }
 
-    public double printBankAccount() {
+    public void printBankAccount() {
         System.out.println(this.owner + ": " + this.balance + "€");
     }
 }
@@ -149,13 +165,13 @@ alice.withdraw(500);
 // Calling the deposit method, will increase the balance attribute of the bob object
 bob.deposit(1000);
 
-System.out.println(alice.printBankAccount());
-System.out.println(bob.printBankAccount());
+System.out.println(alice.getBalance());
+System.out.println(bob.getBalance());
 ```
 
 ```
-Alice: 4500.0€
-Bob: 1090.0€
+4500.0
+1090.0
 ```
 
 ## String presentation of objects
@@ -239,12 +255,12 @@ graph LR
     A["account1"] -->|reference| B["<b>BankAccount</b><br/>owner: #quot;Steve#quot;<br/>balance: 1300.0"]
     C["account2"] -->|reference| D["<b>BankAccount</b><br/>owner: #quot;Mary#quot;<br/>balance: 300.0"]
     E["account3"] -->|reference| D
-    
-    style A fill:#e1f5ff
-    style C fill:#e1f5ff
-    style E fill:#e1f5ff
-    style B fill:#fff9c4
-    style D fill:#fff9c4
+
+    style A fill:#e1f5ff,color:#333
+    style C fill:#e1f5ff,color:#333
+    style E fill:#e1f5ff,color:#333
+    style B fill:#fff9c4,color:#333
+    style D fill:#fff9c4,color:#333
 ```
 
 ## `null` reference
@@ -263,6 +279,44 @@ System.out.println(account.getBalance()); // NullPointerException!
 if (account != null) {
     System.out.println(account.getName());
 }
+```
+
+## Method and attribute visilibity
+
+- Where a method can be called and where an attribute can be accessed is controlled by the `private` and `public` keywords specified at the beginning of a method or attribute definition
+- A `public` method or attribute can be **called and accessed anywhere**, e.g. in the `main` method of the program
+- In contrast, a `private` method or attribute can **only be called and accesssed within the class itself** and not outside it, e.g. in the `main` method of the program
+- The general rule is to keep attributes private and only make methods necessary to be used outside the class public
+
+```java
+public class BankAccount {
+    // Attributes should be kept private, only accessible within the class
+    private String owner;
+    private double balance;
+
+    public BankAccount(String owner, double balance) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    // Private method can only be called within the class
+    private String formatBalance() {
+        return this.balance + "€";
+    }
+
+    public void printBankAccount() {
+        // We can call the formatBalance here, because we are in a method of the same class
+        System.out.println(this.owner + ": " + this.formatBalance());
+    }
+}
+```
+
+```java
+BankAccount steve = new BankAccount("Steve", 1300);
+// WON'T WORK, we can't call a private method outside the class itself
+System.out.println(steve.formatBalance());
+// WORKS, we can call a public method anywhere in the program
+System.out.println(steve.printBankAccount());
 ```
 
 ## List of objects
