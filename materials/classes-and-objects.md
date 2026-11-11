@@ -8,6 +8,15 @@
 - In Java, each class is defined in its own file, named by the class name, e.g. `BankAccount.java`
 - An application typically **consists of multiple classes**, each with a specific responsibility. Together, these classes provide the functionality required by the application
 
+```mermaid
+classDiagram
+    class BankAccount{
+        -String owner
+        -double balance
+        +printBankAccount()
+    }
+```
+
 ```java
 // This is a class named BackAcount in BankAccount.java file
 // It serves as a blueprint for creating bank account objects
@@ -100,8 +109,8 @@ BankAccount alice = new BankAccount("Alice", 5000);
 BankAccount bob = new BankAccount("Bob", 90);
 
 // alice and bob objects have different attribute values, which we will see in the output
-System.out.println(alice.printBankAccount());
-System.out.println(bob.printBankAccount());
+alice.printBankAccount();
+bob.printBankAccount();
 ```
 
 ```
@@ -314,6 +323,8 @@ public class BankAccount {
         // We can call the formatBalance here, because we are in a method of the same class
         System.out.println("Owner: " + this.owner + ", balance: " + this.formatBalance());
     }
+
+    // ...
 ```
 
 ```java
@@ -321,7 +332,7 @@ BankAccount steve = new BankAccount("Steve", 1300);
 // WON'T WORK, we can't call a private method outside the class itself
 System.out.println(steve.formatBalance());
 // WORKS, we can call a public method anywhere in the program
-System.out.println(steve.printBankAccount());
+steve.printBankAccount();
 ```
 
 ## List of objects
