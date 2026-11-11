@@ -47,6 +47,12 @@ public class Player {
     public void addAssists(int assists) {
         this.assists += assists;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + ", " + this.getTeam() + ": "
+        + this.getGoals() + " + " + this.getAssists() + " = " + this.getPoints();
+    }
 }
 ```
 
@@ -83,14 +89,9 @@ public class WarmUp2 {
         mackinnon.addAssists(2);
         draisaitl.addGoals(5);
 
-        printPlayer(mcdavid);
-        printPlayer(mackinnon);
-        printPlayer(draisaitl);
-    }
-
-    private static void printPlayer(Player player) {
-        System.out.println(player.getName() + ", " + player.getTeam() + ": "
-                + player.getGoals() + " + " + player.getAssists() + " = " + player.getPoints());
+        System.out.println(mcdavid);
+        System.out.println(mackinnon);
+        System.out.println(draisaitl);
     }
 }
 ```
@@ -125,8 +126,7 @@ public class WarmUp3 {
         }
 
         for (Player player : players) {
-            System.out.println(player.getName() + ", " + player.getTeam() + ": "
-                    + player.getGoals() + " + " + player.getAssists() + " = " + player.getPoints());
+            System.out.println(player);
         }
     }
 }

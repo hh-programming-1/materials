@@ -13,7 +13,7 @@ src/
 
 ## Warm-up 1
 
-Create a `Player.java` file in the `week7` folder. In that file, implement a `Player` class with the attributes `name`, `team`, `goals` and `assists`. The `goals` and `assists` attributes are integers other attributes are strings. The class should have a constructor and methods `getName`, `getTeam`, `getGoals`, `getAssists` and `getPoints`. The `getPoints` should return the sum of player's goals and assists. The ohter methods should simply return the corresponding attribute's value.
+Create a `Player.java` file in the `week7` folder. In that file, implement a `Player` class with the attributes `name`, `team`, `goals` and `assists`. The `goals` and `assists` attributes are integers other attributes are strings. The class should have a constructor and methods `getName`, `getTeam`, `getGoals`, `getAssists` and `getPoints`. The `getPoints` should return the sum of player's goals and assists. The other methods should simply return the corresponding attribute's value.
 
 Finally, create a `WarmUp1.java` file in the `week7` folder. Implement a `main` method with the following content:
 
@@ -40,7 +40,11 @@ Florida Panthers
 
 ## Warm-up 2
 
-Implement the `addGoals(int goals)` and `addAssists(int assists)` methods to the `Player` class for increasing goals and assists by the given amount.
+Implement the following methods for the `Player` class:
+
+- `addGoals(int goals)`, increases the player's goals by the provided amount
+- `addAssists(int assists)`, increases the player's assists by the provided amount
+- `toString()`, returns the player's information as a string in format "Name, Team: Goals + Assists = Points"
 
 Then, create an application, which initializes the following three `Player` objects:
 
@@ -55,7 +59,7 @@ After initializing the objects do the following:
 - Increase the number of goals for McDavid by 10.
 - Increase the number of assists by MacKinnon by 2.
 - Increase the number of goals by Draisaitl by 5.
-- Print the information of each player in format "Name, Team: Goals + Assists = Points".
+- Print the information of each player using the `toString` method
 
 Check that the following is printed:
 
@@ -67,7 +71,7 @@ Leon Draisaitl, Edmonton Oilers = 50 + 55 = 105
 
 ## Warm-up exercise 3
 
-Create an application, which asks the user to enter player's information (name, team, goals, assists) until the user enters an empty name. The players should be added to an `ArrayList`. After the user enters an empty name, the application should print all the players on the list in format "Name, Team: Goals + Assists = Points".
+Create an application, which asks the user to enter player's information (name, team, goals, assists) until the user enters an empty name. The players should be added to an `ArrayList`. After the user enters an empty name, the application should print all the players on the list using the `toString` method implemented previously.
 
 Example:
 
