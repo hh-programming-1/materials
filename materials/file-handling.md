@@ -138,6 +138,6 @@ for (String line : lines) {
     String name = parts[1];
     int grade = Integer.parseInt(parts[2]);
 
-    Student = new Student(studentNumber, name, grade);
+    Student student = new Student(studentNumber, name, grade);
 }
 ```
