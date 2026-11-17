@@ -1,5 +1,15 @@
 # Example exam
 
+For each exercise, create an exercise-specific `.java` file in the `exam` folder.
+
+```
+src/
+└── main/
+    └── java/
+        └── exam/ 👈
+            └──  Exercise1.java 👈
+```
+
 ## 1. Numbers (Exercise1.java)
 
 Write a class `Exercise1` with a `main` method that asks the user for two positive integers. After reading the numbers, check that the given numbers were positive. Then your program calculates their sum and average.

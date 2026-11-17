@@ -8,7 +8,6 @@ src/
     └── java/
         ├── ...
         └── week2/ 👈
-            ├── ...
             └── WarmUp1.java 👈
 ```
 
