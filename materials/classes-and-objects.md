@@ -365,3 +365,45 @@ Owner: Bob, balance: 90.0€
 Owner: Steve, balance: 1300.0€
 Owner: Mary, balance: 300.0€
 ```
+
+## 💡 Class and object example: Bank transaction
+
+> Write a program which asks for the bank account owner's name and the initial balance. Then, it asks to either withdraw or deposit a amount from the account. Once the transaction is completed, the program prints the bank account's information.
+
+```java
+public class BankTransaction {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the bank account owner's name: ");
+        String owner = input.nextLine();
+
+        System.out.print("Enter the initial balance: ");
+        double initialBalance = Double.parseDouble(input.nextLine());
+
+        BankAccount account = new BankAccount(owner, initialBalance);
+
+        System.out.print("Do you want to withdraw or deposit? ");
+        String transactionType = input.nextLine();
+
+        System.out.print("Enter the amount: ");
+        double amount = Double.parseDouble(input.nextLine());
+
+        if (transactionType.equals("withdraw")) {
+            account.withdraw(amount);
+        } else if (transactionType.equals("deposit")) {
+            account.deposit(amount);
+        }
+
+        System.out.println(account);
+    }
+}
+```
+
+```
+Enter the bank account owner's name: Ricky Rich
+Enter the initial balance: 100000
+Do you want to withdraw or deposit? deposit
+Enter the amount: 5000
+Owner: Ricky Rich, balance: 105000.0€
+```
