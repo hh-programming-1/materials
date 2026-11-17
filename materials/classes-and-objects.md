@@ -366,7 +366,7 @@ Owner: Steve, balance: 1300.0€
 Owner: Mary, balance: 300.0€
 ```
 
-## 💡 Class and object example: Bank transaction
+## 💡 Class and object example: bank transaction
 
 > Write a program which asks for the bank account owner's name and the initial balance. Then, it asks to either withdraw or deposit a amount from the account. Once the transaction is completed, the program prints the bank account's information.
 
